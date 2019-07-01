@@ -19,7 +19,7 @@
 - [2.16 Comments](#216-comments)
 - [2.17 Programming Style](#217-programming-style)
 
---
+---
 
 ## 2.1 The Parts of a C++ Program
 
