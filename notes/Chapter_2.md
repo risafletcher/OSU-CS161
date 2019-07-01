@@ -183,7 +183,7 @@ A variable's scope is part of the program that has access to the variable.
 
 When two integers are divided and the result includes a fraction, the fraction is thrown away. Either divide floating point numbers or use the **_modulus operator_** to compute the remainder of doing an integer divide.
 
-![3f30159f.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/26e45154-06d5-4464-96a0-aebc9b5d2fba/3f30159f.png)
+![3f30159f.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/3f30159f.png)
 
 ## 2.16 Comments
 
