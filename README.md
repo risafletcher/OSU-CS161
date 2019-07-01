@@ -1,6 +1,6 @@
 # OSU - CS161 Notes
 
-Notes for Oregon State University's CS161 Summer 2019 course. Includes [**Bootstnote**](https://boostnote.io/) files as well as regular markdown.
+Notes for Oregon State University's CS161 Summer 2019 course. Includes [**Boostnote**](https://boostnote.io/) files as well as regular markdown.
 
 Everything is available in `/notes`. 
 
