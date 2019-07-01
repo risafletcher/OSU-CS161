@@ -3,6 +3,7 @@
 ### 1.2 Computer Systems: Hardware and Software
 
 **1.1 Why is the computer used by so many different people, in so many different professions?**
+
 Computers allow users to perform calculations, tasks, and complicated jobs quickly.
 
 
