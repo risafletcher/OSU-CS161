@@ -1,0 +1,22 @@
+# Chapter 1: Review & Q&A
+
+**1.11 What is an algorithm?**
+A set of instructions to solve a problem or perform a task.
+
+**1.12 Why were computer programming languages invented?**
+To make programming easier. Writing binary would be frustrating.
+
+**1.13 What is the difference between a high-level language and a low-level language?**
+High-level languages are easier to read. Low-level languages are closer to machine code, which is basically binary.
+
+**1.14 What does portability mean?**
+A portable program is one that can be written on one computer and run on other types of systems. They will likely need to be compiled differently but the program itself needs little or no change.
+
+**1.15 Explain the operations carried out by the preprocessor, compiler, and linker.**
+The preprocessor is a program that reads the source code and searches for directives that cause it to amend or process the code in a certain way. The compiler takes the preprocessed code and translates it to machine code (object code). Should there be any syntactical errors, the compiler will fail. The output of the compiler is an object file. The linker is a program that takes the object file and combines it with any necessary runtime library routines. Its output is an executable file.
+
+**1.16 Explain what is stored in a source file, an object file, and an executable file.**
+A **source file** contains source code (pre-preprocessor), an **object file** contains object code (post-preprocessor & compiler), and an **executable file** contains executable code (post-linker; final output). 
+
+**1.17 What is an integrated development environment?**
+An IDE is software that includes a text editor, a compiler, debugger and other utilities. An example is Microsoft Visual Studio Code (VSCode).
