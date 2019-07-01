@@ -1,11 +1,11 @@
 createdAt: "2019-07-01T01:11:37.283Z"
-updatedAt: "2019-07-01T02:07:36.164Z"
+updatedAt: "2019-07-01T02:47:01.209Z"
 type: "MARKDOWN_NOTE"
 folder: "0572df513e4fe767df79"
-title: "Chapter 2"
+title: "Chapter 2: Introduction to C++"
 tags: []
 content: '''
-  # Chapter 2
+  # Chapter 2: Introduction to C++
   
   ## 2.1 The Parts of a C++ Program
   
@@ -33,7 +33,7 @@ content: '''
   
   `endl;` end line (line break). It is a manipulator whereas `\\n` is a character. endl will append \\n and flushes the Output stream by calling `flush()` on the stream. It is slower than `\\n` alone.
   
-  ![b8d91e13.png](:storage/26e45154-06d5-4464-96a0-aebc9b5d2fba/b8d91e13.png)
+  ![dfee7b0a.png](:storage/26e45154-06d5-4464-96a0-aebc9b5d2fba/dfee7b0a.png)
   
   Each escape sequence is considered one character.
   
