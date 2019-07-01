@@ -1,5 +1,12 @@
 # Chapter 1
 
+## Table of Contents
+
+  - [1.2 Computer Systems: Hardware and Software](#12-computer-systems--hardware-and-software)
+  - [1.3 Source Code, Object Code, and Executable Code](#13-source-code--object-code--and-executable-code)
+
+---
+
 ### 1.2 Computer Systems: Hardware and Software
 
 **1.1 Why is the computer used by so many different people, in so many different professions?**

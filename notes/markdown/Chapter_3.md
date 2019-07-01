@@ -1,5 +1,13 @@
 # Chapter 3: Expressions and Interactivity
 
+## Table of Contents
+  * [3.1 The `cin` Object](#31-the--cin--object)
+      - [Program Output with Example Input Shown in Bold](#program-output-with-example-input-shown-in-bold)
+  * [3.2 Mathematical Expressions](#32-mathematical-expressions)
+  * [3.3 Data Type Conversion and Type Casting](#33-data-type-conversion-and-type-casting)
+
+---
+
 ## 3.1 The `cin` Object
 
 `cin` (**c**onsole **in**) can be used to read data typed at the keyboard.
