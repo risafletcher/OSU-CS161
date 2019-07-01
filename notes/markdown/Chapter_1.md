@@ -16,12 +16,12 @@ The central processing unit (CPU), main memory (random access memory, RAM), seco
 
 The Arithmetic and logic unit (ALU) and the control unit.
 
-![35a9d1c5.png](../attachments/35a9d1c5.png)
+![35a9d1c5.png](../../attachments/13b7f6e0-fb9a-4a68-8e6c-fa450decd299/35a9d1c5.png)
 
 
 **1.4 Describe the steps in the fetch/decode/execute cycle.** 
 
-![a45da0b0.png](../attachments/a45da0b0.png)
+![a45da0b0.png](../../attachments/13b7f6e0-fb9a-4a68-8e6c-fa450decd299/a45da0b0.png)
 
 
 **1.5 What is a memory address? What is its purpose?**

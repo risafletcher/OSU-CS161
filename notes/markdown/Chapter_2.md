@@ -12,7 +12,7 @@ Variables, functions, and objects are examples of program entities that must hav
 
 `main()` is the starting point for each C++ program.
 
-![5a5460c0.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/5a5460c0.png)
+![5a5460c0.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/5a5460c0.png)
 
 `return 0` usually indicates the program executed successfully.
 
@@ -26,7 +26,7 @@ Variables, functions, and objects are examples of program entities that must hav
 
 `endl;` end line (line break). It is a manipulator whereas `\n` is a character. endl will append \n and flushes the Output stream by calling `flush()` on the stream. It is slower than `\n` alone.
 
-![b8d91e13.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/dfee7b0a.png)
+![b8d91e13.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/dfee7b0a.png)
 
 Each escape sequence is considered one character.
 
@@ -56,11 +56,11 @@ A literal is a piece of data that is written directly into a program's code. One
 
 An **identifier** is a programmer-defined name that represents some element of a program. Variable names are examples of identifiers.
 
-![58de09bf.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/58de09bf.png)
+![58de09bf.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/58de09bf.png)
 
 ## 2.7 Integer Data Types
 
-![25fc3f28.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/25fc3f28.png)
+![25fc3f28.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/25fc3f28.png)
 
 **Integer**: a whole number
   - **signed**: positive and negative
@@ -69,7 +69,7 @@ An **identifier** is a programmer-defined name that represents some element of a
 **Floating-point number**: numbers that have a decimal point
 **Size**: the number of bytes a data type can hold
 
-![9fbe4ffe.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/9fbe4ffe.png)
+![9fbe4ffe.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/9fbe4ffe.png)
 
 _*all can be abbreviated by omitting the word `int`._
 
@@ -83,7 +83,7 @@ Some data types have the same sizes and ranges.
 
 Multiple variables of the same type can be defined in a single statement, separated by commas. It's generally preferred to break lines after each comma.
 
-![29caf7f8.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/29caf7f8.png)
+![29caf7f8.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/29caf7f8.png)
 
 
 1. Define a `long` variable named `amount`.
@@ -91,7 +91,7 @@ To store an integer literal as a long integer, place the letter L at the end of 
 
 2. Assign the literal value `32` to the amount variable. Because the literal is written as `32L`, it makes it a long integer literal. This means the assigned value is reated as a long. Likewise, if you want an integer literal to be treated as a long long int, you can append `LL` at the end of the number.
 
-![c880eb07.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/5413943a.png)
+![c880eb07.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/5413943a.png)
 
 The `0x` prefix denotes a **hexadecimal number**. The `0` prefix denotes an **octal number**.
 
@@ -104,14 +104,14 @@ Internally, floating-point numbers are stored in a manner similar to scientific 
 
 Computers typically use **E notation** to represent floating-point values. In E notation, the number `47,281.97` would be `4.728197E4`. The part of the number before the E is the mantissa and the part after the E is the power of 10. When a floating-point number is stored in memory, it is stored as the mantissa and the power of 10.
 
-![7fd8c8cd.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/7fd8c8cd.png)
+![7fd8c8cd.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/7fd8c8cd.png)
 
 In C++, three data types can represent floating-point numbers:
 - float: single precision
 - double: usually twice as big as float, so it is considered double precision, at least as big as a float
 	- long double: larger than double, at least as big as a double
 
-![081b244c.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/081b244c.png)
+![081b244c.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/081b244c.png)
 
 _*Some compilers use more than 8 bytes for a long double. This allows a greater range._
 
@@ -125,11 +125,11 @@ When a floating-point number is assigned to an integer variable, the fractional 
 
 The char data type is used to store individual characters. A variable of this type can hold only a single character and, on most systems, uses just one byte of memory.
 
-![c3a59600.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/c3a59600.png)
+![c3a59600.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/c3a59600.png)
 
 Because a char variable can only hold a single character, it can be assigned the character `'A'`, but not the string `"A"`.
 
-![0e4032e9.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/0e4032e9.png)
+![0e4032e9.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/0e4032e9.png)
 
 • Printable characters are internally represented by numeric codes. Most computers use ASCII codes for this purpose.
 • Characters normally occupy a single byte of memory.
@@ -150,7 +150,7 @@ The first step in using the string class is to #include the string header file.
 
 The next step is to define a string type variable, called a string. Defining a string object is similar to defining a variable of a primitive type. You can assign a string literal to your named string object with the assignment operator `=`.
 
-![a65c7872.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/a65c7872.png)
+![a65c7872.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/a65c7872.png)
 
 ## 2.11 The bool Data Type
 
@@ -183,7 +183,7 @@ A variable's scope is part of the program that has access to the variable.
 
 When two integers are divided and the result includes a fraction, the fraction is thrown away. Either divide floating point numbers or use the **_modulus operator_** to compute the remainder of doing an integer divide.
 
-![3f30159f.png](../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/3f30159f.png)
+![3f30159f.png](../../attachments/26e45154-06d5-4464-96a0-aebc9b5d2fba/3f30159f.png)
 
 ## 2.16 Comments
 
