@@ -63,7 +63,9 @@ Notes on assigned readings from the following text(s):
 
 
 
-**via FTP**:
+
+
+via FTP**:
 
 1. In your FTP client, open a connection to `sftp://access.engr.oregonstate.edu`. Ensure you’re using the **SFTP** protocol. Regular FTP will **not** work.
 
