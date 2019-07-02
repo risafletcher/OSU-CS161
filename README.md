@@ -44,7 +44,7 @@ Notes on assigned readings from the following text(s):
 2. Create a directory for your work & create your files
    1. `mkdir <weekX>`
    2. `touch <FILE_NAME>.cpp`
-   3. Optional: If you want to use `vim`, `vim <FILE_NAME>.cpp`
+   3. `vim <FILE_NAME>.cpp` and begin writing your program.
       1. `:exit` to save and exit `vim`
 3. Compiile your `cpp` file
    1. `g++ <FILE_NAME>.cpp -o <EXECUTABLE_NAME>`
