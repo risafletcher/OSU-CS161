@@ -143,7 +143,7 @@ An **identifier** is a programmer-defined name that represents some element of a
 
 ## 2.7 Integer Data Types
 
-![25fc3f28.png](./assets/chapter2/25fc3f28.png)
+![25fc3f28.png](./assets/25fc3f28.png)
 
 **Integer**: a whole number
 
@@ -237,7 +237,7 @@ When a floating-point number is assigned to an integer variable, the fractional 
 
 The char data type is used to store individual characters. A variable of this type can hold only a single character and, on most systems, uses just one byte of memory.
 
-![c3a59600.png](./assets/chapter2/c3a59600.png)
+![c3a59600.png](./assets/c3a59600.png)
 
 Because a char variable can only hold a single character, it can be assigned the character `'A'`, but not the string `"A"`.
 
@@ -336,7 +336,7 @@ A variable's scope is part of the program that has access to the variable.
 
 When two integers are divided and the result includes a fraction, the fraction is thrown away. Either divide floating point numbers or use the **_modulus operator_** to compute the remainder of doing an integer divide.
 
-![3f30159f.png](./assets/chapter2/3f30159f.png)
+![3f30159f.png](./assets/3f30159f.png)
 
 
 

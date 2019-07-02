@@ -53,7 +53,7 @@ cout << "Enter an integer, a double, and a character";
 cin >> whole >> factional >> letter;
 ```
 
-![eb90d9a8.png](./assets/chapter3/eb90d9a8.png)
+![eb90d9a8.png](./assets/eb90d9a8.png)
 
 
 

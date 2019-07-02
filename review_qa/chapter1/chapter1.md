@@ -13,7 +13,7 @@ The central processing unit (CPU), main memory (random access memory, RAM), seco
 
 The Arithmetic and logic unit (ALU) and the control unit.
 
-![35a9d1c5.png](./assets/chapter1/35a9d1c5.png)
+![35a9d1c5.png](./assets/35a9d1c5.png)
 
 **1.4 Describe the steps in the fetch/decode/execute cycle.** 
 
