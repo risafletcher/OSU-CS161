@@ -46,7 +46,7 @@ cout << "Enter an integer, a double, and a character";
 cin >> whole >> factional >> letter;
 ```
 
-![eb90d9a8.png](../../attachments/d0c582e9-8bf9-453b-a270-6c6e0a93ef87/eb90d9a8.png)
+![eb90d9a8.png](./assets/chapter3/eb90d9a8.png)
 
 
 ## 3.2 Mathematical Expressions
@@ -55,11 +55,11 @@ C++ allows you to construct complex mathematical expressions using multiple oper
 
 When sending an expression that includes an operator to `cout`, it is always a good idea to put parentheses around the expression. Some operators will yield unexpected results otherwise.
 
-![bae5f04c.png](../../attachments/d0c582e9-8bf9-453b-a270-6c6e0a93ef87/bae5f04c.png)
+![bae5f04c.png](./assets/chapter3/bae5f04c.png)
 
 **Associativity** is the order in which an operator works with its operands. Associativity is either _left to right_ or _right to left_.
 
-![31f634eb.png](../../attachments/d0c582e9-8bf9-453b-a270-6c6e0a93ef87/31f634eb.png)
+![31f634eb.png](./assets/chapter3/31f634eb.png)
 
 C++ does not have an exponent operator. Raising a number to a power requires the use of a _library function_. A **library function** is a routine that performas a specific operation.
 
@@ -81,7 +81,7 @@ area = pow(4.0, 2);
 
 When an operator's operands are of different data types, C++ automatically converts them to the same data type. When it does this it follows a set of rules, and understanding these rules will help you prevent subtle errors from creeping into your programs.
 
-![156e2342.png](../../attachments/d0c582e9-8bf9-453b-a270-6c6e0a93ef87/156e2342.png)
+![156e2342.png](./assets/chapter3/156e2342.png)
 *One exception to this ranking is when an `int` and a `long int` are the same size. In that case, an `unsigned int` outranks a `long int` because it can hold a higher value.
 
 **type coercion**: the conversion of one type of object to a new object of a different type.
