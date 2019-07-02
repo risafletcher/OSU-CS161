@@ -1,10 +1,30 @@
-[TOC]
-
-------
-
 # Chapter 2:  Introduction to C++
 
 ---
+
+## Table of Contents
+
+- [2.1 The Parts of a C++ Program](#21-the-parts-of-a-c---program)
+- [2.2 The `cout` Object](#22-the--cout--object)
+- [2.3 The `#include` Directive](#23-the---include--directive)
+- [2.4 Variables and the Assignment Statement](#24-variables-and-the-assignment-statement)
+- [2.5 Literals](#25-literals)
+- [2.6 Identifiers](#26-identifiers)
+  * [The C++ Key Words](#the-c---key-words)
+- [2.7 Integer Data Types](#27-integer-data-types)
+- [2.8 Floating-Point Data Types](#28-floating-point-data-types)
+- [2.9 The char Data Type](#29-the-char-data-type)
+- [2.10 The C++ string Class](#210-the-c---string-class)
+    + [Output](#output)
+- [2.11 The bool Data Type](#211-the-bool-data-type)
+- [2.12 Determining the Size of a Data Type](#212-determining-the-size-of-a-data-type)
+- [2.13 More on Variable Assignments and Initialization](#213-more-on-variable-assignments-and-initialization)
+- [2.14 Scope](#214-scope)
+- [2.15 Arithmetic Operators](#215-arithmetic-operators)
+- [2.16 Comments](#216-comments)
+- [2.17 Programming Style](#217-programming-style)
+
+------
 
 
 

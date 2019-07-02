@@ -1,10 +1,16 @@
-[TOC]
+# Chapter 3: Expressions and Interactivity
 
 ------
 
-# Chapter 3: Expressions and Interactivity
+## Table of Contents
 
----
+- [3.1 The `cin` Object](#31-the--cin--object)
+    + [Program Output with Example Input Shown in Bold](#program-output-with-example-input-shown-in-bold)
+- [3.2 Mathematical Expressions](#32-mathematical-expressions)
+  * [Precedence of Arithmetic Operators (Highest to Lowest)](#precedence-of-arithmetic-operators--highest-to-lowest-)
+- [3.3 Data Type Conversion and Type Casting](#33-data-type-conversion-and-type-casting)
+
+------
 
 
 
