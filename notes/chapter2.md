@@ -34,7 +34,9 @@ The `#include` directive causes the preprocessor to include the contents of anot
 
 The word that is enclosed in brackets, `<iostream>`, is the name of the header file that is to be included. (The name of the file is `iostream`. The brackets indicate that it is a standard C++ header file.) 
 
-Variables, functions, and objects are examples of program entities that must have names. C++ uses **namespaces** to organize the names of program entities. The statement `using namespace std` declares that the program will be accessing entities whose names are part of the namespace `std`. (Yes, even namespaces have names.) The program needs access to the `std` namespace because every name created by the `iostream` file is part of that namespace. In order for a program to use the entities in `iostream`, it must have access to the `std `namespace.
+[**Namespace**](https://www.geeksforgeeks.org/namespace-in-c/): a declarative region that provides a scope to the identifiers (names of the types, function, variables, etc) inside it. 
+
+The statement `using namespace std` declares that the program will be accessing entities whose names are part of the namespace `std`. In order for a program to use the entities in `iostream`, it must have access to the `std `namespace.
 
 `main()` is the starting point for each C++ program.
 
@@ -259,9 +261,13 @@ char letterTwo = "A";		// This will NOT work!
 
 C++ does not have a built-in data type for strings. C++ provides a string class.
 
-The first step in using the string class is to #include the string header file.
+The first step in using the string class is to `#include` the string header file.
 
-`#include <string>`
+```C++
+#include <string>
+```
+
+
 
 The next step is to define a string type variable, called a string. Defining a string object is similar to defining a variable of a primitive type. You can assign a string literal to your named string object with the assignment operator `=`.
 

@@ -132,3 +132,154 @@ When an operator's operands are of different data types, C++ automatically conve
 
 
 
+### Rules that govern evaluation of mathematical expressions
+
+##### **Rule 1**: `char`, `short`, and `unsigned short` values are automatically promoted to `int` values.
+
+*_The only exception to this rule is when an_  `unsigned short` _holds a value larger than can be held by an_ `int`.  _This can happen on systems where a_ `short` _is the same size as an_ `int`. _In this case, the_ `unsigned short` _is promoted to_ `unsigned int`.
+
+
+
+##### **Rule 2**: When an operator works with two values of different data types, the lower-ranking value is promoted to the type of the higher-ranking value.
+
+```C++
+int years;
+double interestRate;
+years * interestRate;	// before multiplication, years will be promoted to a double
+```
+
+
+
+##### **Rule 3**: When the final value of an expression is assigned to a variable, it will be converted to the data type of that variable.
+
+```C++
+long int area;
+int length,
+	width;
+area = length * width;	// the result will be promoted to long so it can be stored in area
+```
+
+
+
+**Type cast expression**: an expression that manually demotes or promotes a value (changes the data type). C++ provides several different types of cast expressions. `static_cast` is the most commonly used type cast expression.
+
+```C++
+// Value: variable or literal value you wish to convert
+// DataType: the data type you wish to convert it to
+static_cast<DataType>(Value)
+    
+// Example
+double number = 3.7;
+int val;
+val = static_cast<int>(number);	// returns a copy of number, converted to an int
+```
+
+##### C-style Cast
+
+```c
+booksPerMonth = (double)books / months;
+```
+
+##### Pre-standard C++ Cast
+
+```c++
+booksPerMonth = double(books) / months;
+```
+
+
+
+## 3.4 Overflow and Underflow
+
+When a value cannot fit in the number of bits provided by a variable’s data type, **overflow **or **underflow **occurs.
+
+
+
+**High-order bit**: leftmost bit
+
+A number with a `0` in the high-order bit is interpreted as a **positive number**. A number with a `1` in the high-order bit is interpreted as a **negative number**.
+
+
+
+Examples of overflow:
+
+- when a value exceeds the number of bits that data type allows.
+- when an integer variable is holding the value at the far end of its data type’s negative range and 1 is subtracted from it, its higher-order bit will become a `0`, resulting in a positive number.
+
+Examples of underflow:
+
+- when a **floating-point value** is too close to zero and is so small that more digits of precision are needed to express it than can be stored in the variable holding it. 
+
+
+
+## 3.5 Named Constants
+
+Literals may be given names that symbolically represent them in a program.
+
+- Constant names are typically all-caps: `const double INTEREST_RATE = 0.069;`
+- Constants are read-only.
+
+
+
+## 3.6 Multiple and Combined Assignment
+
+Multiple assignment means to assign the same value to several variables with one statement.
+
+```C++
+a = b = c = d = 12	// a, b, c, and d are all assigned a value of 12
+```
+
+
+
+### Combined Assignment Operators
+
+| **Operator** | **Example Usage** | **Equivalent To** |
+| ------------ | ----------------- | ----------------- |
+| `+=`         | `x += 5;`         | `x = x + 5`;      |
+| `-=`         | `y -= 2;`         | `y = y - 2;`      |
+| `*=`         | `z *= 10;`        | `z = z * 10;`     |
+| `/=`         | `a /= b;`         | `a = a / b;`      |
+| `%=`         | `c %= 3;`         | `c = c % 3;`      |
+
+
+
+## 3.7 Formatting Output
+
+`cout` provides ways to format data as it is being displayed. This affects the way data appears on the screen.
+
+
+
+#### Stream Manipulators
+
+`setw(minimum width = # of spaces)`: defines the minimum number of positions in the print field. Any value requiring a larger field than the specified minimum will cause `cout` to override the  `setw` value.
+
+
+
+`setprecision(# of significant digits)`: specifies the number of significant digits to be displayed for a floating-point number. If the value is expressed in fewer digits, the manipulator will have no effect. By default, the system displays floating-point values with 6 significant digits.
+
+```C++
+cout << setprecision(5) << 307.00
+// output
+307.00
+```
+
+
+
+`fixed`: indicates that floating-point output should be printed in _fixed point_, or decimal notation. When used in conjunction with the `setprecision` manipulator, it specifies the number of digits to be displayed after the decimal point rather than the total number of digits displayed.
+
+```C++
+cout << fixed << setprecision(2) << 307.00
+// output
+307.00
+```
+
+`showpoint`: indicates that a decimal point and decimal digits should be printed for a floating-point number, even if the value being displayed has no decimal digits.
+
+```C++
+double x = 456.0;
+cout << showpoint << x << endl;
+// output
+456.000
+```
+
+
+
