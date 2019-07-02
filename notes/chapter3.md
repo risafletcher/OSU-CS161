@@ -1,7 +1,5 @@
 # Chapter 3: Expressions and Interactivity
 
-------
-
 ## Table of Contents
 
 - [3.1 The `cin` Object](#31-the--cin--object)
@@ -57,8 +55,6 @@ cin >> whole >> factional >> letter;
 
 ![eb90d9a8.png](./assets/chapter3/eb90d9a8.png)
 
-------
-
 
 
 ## 3.2 Mathematical Expressions
@@ -105,8 +101,6 @@ area = pow(4.0, 2);
 ```
 
 ***arguments** are information being sent to a function.
-
-------
 
 
 

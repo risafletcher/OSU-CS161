@@ -1,7 +1,5 @@
 # Chapter 2:  Introduction to C++
 
----
-
 ## Table of Contents
 
 - [2.1 The Parts of a C++ Program](#21-the-parts-of-a-c---program)
@@ -52,8 +50,6 @@ Variables, functions, and objects are examples of program entities that must hav
 
 `return 0` usually indicates the program executed successfully.
 
-------
-
 
 
 ## 2.2 The `cout` Object
@@ -91,8 +87,6 @@ Preprocessor directives are not C++ statements. They are commands to the preproc
 
 The preprocessor inserts the entire contents of the file specified in the #include directive. The compiler doesn't actually see the #include directive. Instead it sees the code that was inserted by the preprocessor, just as if the programmer had typed it in there.
 
-------
-
 
 
 ## 2.4 Variables and the Assignment Statement
@@ -102,8 +96,6 @@ The concept of a variable in computer programming is somewhat different from the
 **Int number** - variable definition. It tells the computer the variable's name and the type of data it will hold.
 `number = 5` - an assignment statement, the `=` sign is called the assignment operator.
 
-------
-
 
 
 
@@ -112,8 +104,6 @@ The concept of a variable in computer programming is somewhat different from the
 A literal is a piece of data that is written directly into a program's code. One of the most common uses of literals is to assign a value to a variable. Another common use of literals is to display something on the screen.
 
 `endl` is a stream manipulator.
-
-------
 
 
 
@@ -203,8 +193,6 @@ To store an integer literal as a long integer, place the letter L at the end of 
 
 The `0x` prefix denotes a **hexadecimal number**. The `0` prefix denotes an **octal number**.
 
-------
-
 
 
 
@@ -239,9 +227,7 @@ On all machines, the float, double, and long double data type can store both pos
 
 Floating-point literals are normally stored in memory as doubles. If you need one to be stored as a float, you can append the letter F or f to the end of it. For example, this literal would be stored as a float number: `1.2F`.
 
-When a floating-point number is assigned to an integer variable, the fractional part of the value is discarded because an int cannot hold any value containing decimals.
-
-------
+When a floating-point number is assigned to an integer variable, the fractional part of the value is discarded because an `int `cannot hold any value containing decimals.
 
 
 
@@ -265,8 +251,6 @@ char letterTwo = "A";		// This will NOT work!
 • Character literals are enclosed in single quotation marks.
 • String literals are enclosed in double quotation marks.
 • Escape sequences such as '\n' are stored internally as a single character.
-
-------
 
 
 
@@ -311,8 +295,6 @@ My favorite movie is Wheels of Fury
 
 Boolean variables are set to either true or false. `true` has an integer value of `1` and `false` has an integer value of `0`.
 
-------
-
 
 
 ## 2.12 Determining the Size of a Data Type
@@ -320,8 +302,6 @@ Boolean variables are set to either true or false. `true` has an integer value o
 The `sizeof` operator may be used to determine the size of a data type on any system.
 
 One of the problems with portability is the lack of common sizes of data types on all machines. `sizeof` will report the number of bytes of memory used by any data type or variable. `sizeof(variable or data type)` can be used anywhere an unsigned an integer can be used, including in mathematical operations.
-
-------
 
 
 
@@ -337,16 +317,12 @@ One of the problems with portability is the lack of common sizes of data types o
 
 Variable `quarter2` will be the same data type as previously defined variable 1 `quarter1`.
 
-------
-
 
 
 
 ## 2.14 Scope
 
 A variable's scope is part of the program that has access to the variable.
-
-------
 
 
 
@@ -356,16 +332,12 @@ When two integers are divided and the result includes a fraction, the fraction i
 
 ![3f30159f.png](./assets/chapter2/3f30159f.png)
 
-------
-
 
 
 ## 2.16 Comments
 
 `//` prefix single-line comments.
 `/*` and `*/` wrap multi-line comments.
-
-------
 
 
 

@@ -1,7 +1,5 @@
 # Chapter 1
 
-------
-
 ## Table of Contents
 
 - [1.2 Computer Systems: Hardware and Software](#12-computer-systems--hardware-and-software)
@@ -12,8 +10,6 @@
 
 
 ## 1.2 Computer Systems: Hardware and Software
-
-------
 
 
 
