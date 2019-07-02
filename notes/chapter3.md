@@ -1,12 +1,12 @@
+[TOC]
+
+------
+
 # Chapter 3: Expressions and Interactivity
 
-## Table of Contents
-  * [3.1 The `cin` Object](#31-the--cin--object)
-      - [Program Output with Example Input Shown in Bold](#program-output-with-example-input-shown-in-bold)
-  * [3.2 Mathematical Expressions](#32-mathematical-expressions)
-  * [3.3 Data Type Conversion and Type Casting](#33-data-type-conversion-and-type-casting)
-
 ---
+
+
 
 ## 3.1 The `cin` Object
 
@@ -28,7 +28,10 @@ cout << "separated by a space. \n";
 cin >> length >> width;
 ```
 
+
+
 #### Program Output with Example Input Shown in Bold
+
 ```
 Enter the length and width of the rectangle separated by a space.
 
@@ -48,6 +51,9 @@ cin >> whole >> factional >> letter;
 
 ![eb90d9a8.png](./assets/chapter3/eb90d9a8.png)
 
+------
+
+
 
 ## 3.2 Mathematical Expressions
 
@@ -55,11 +61,28 @@ C++ allows you to construct complex mathematical expressions using multiple oper
 
 When sending an expression that includes an operator to `cout`, it is always a good idea to put parentheses around the expression. Some operators will yield unexpected results otherwise.
 
-![bae5f04c.png](./assets/chapter3/bae5f04c.png)
+
+
+### Precedence of Arithmetic Operators (Highest to Lowest)
+
+| **Operator** | **Type** | **Description**                                    |
+| ------------ | -------- | -------------------------------------------------- |
+| `( )`        |          | Expressions within parentheses are evaluated first |
+| `-`          | urnary   | Negation of a value, e.g., -6                      |
+| `*  /  %`    | binary   | Multiplication, division, modulus                  |
+| `+ -`        | binary   | Addition and subtraction                           |
+
+
 
 **Associativity** is the order in which an operator works with its operands. Associativity is either _left to right_ or _right to left_.
 
-![31f634eb.png](./assets/chapter3/31f634eb.png)
+| **Operator**          | **Associativity** |
+| --------------------- | ----------------- |
+| `(urnary negation) -` | Right to left     |
+| `* /  %`              | Left to right     |
+| `+  -`                | Left to right     |
+
+
 
 C++ does not have an exponent operator. Raising a number to a power requires the use of a _library function_. A **library function** is a routine that performas a specific operation.
 
@@ -77,12 +100,29 @@ area = pow(4.0, 2);
 
 ***arguments** are information being sent to a function.
 
+------
+
+
+
 ## 3.3 Data Type Conversion and Type Casting
 
 When an operator's operands are of different data types, C++ automatically converts them to the same data type. When it does this it follows a set of rules, and understanding these rules will help you prevent subtle errors from creeping into your programs.
 
-![156e2342.png](./assets/chapter3/156e2342.png)
+| **Data Type Ranking**    |
+| ------------------------ |
+| `long double`            |
+| `double`                 |
+| `float`                  |
+| `unsigned long long int` |
+| `long long int`          |
+| `unsigned long int`      |
+| `long int`               |
+| `unsigned int`           |
+| `int`                    |
+
 *One exception to this ranking is when an `int` and a `long int` are the same size. In that case, an `unsigned int` outranks a `long int` because it can hold a higher value.
+
+
 
 **type coercion**: the conversion of one type of object to a new object of a different type.
 
