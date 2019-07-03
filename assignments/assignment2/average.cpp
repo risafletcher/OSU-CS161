@@ -28,7 +28,8 @@ int main()
     cin >> fourthNumber;
 
     average = (firstNumber + secondNumber + thirdNumber + fourthNumber) / 4;
-    cout << "The average of those numbers is: " << average << endl;
-    
+    cout << "The average of those numbers is: " << endl;
+    cout << average << endl;
+
     return 0;
 }
