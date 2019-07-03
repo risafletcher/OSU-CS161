@@ -7,6 +7,22 @@
 - [3.2 Mathematical Expressions](#32-mathematical-expressions)
   * [Precedence of Arithmetic Operators (Highest to Lowest)](#precedence-of-arithmetic-operators--highest-to-lowest-)
 - [3.3 Data Type Conversion and Type Casting](#33-data-type-conversion-and-type-casting)
+  * [Rules that govern evaluation of mathematical expressions](#rules-that-govern-evaluation-of-mathematical-expressions)
+      - [**Rule 1**](#--rule-1-----char----short---and--unsigned-short--values-are-automatically-promoted-to--int--values)
+      - [**Rule 2**](#--rule-2----when-an-operator-works-with-two-values-of-different-data-types--the-lower-ranking-value-is-promoted-to-the-type-of-the-higher-ranking-value)
+      - [**Rule 3**](#--rule-3----when-the-final-value-of-an-expression-is-assigned-to-a-variable--it-will-be-converted-to-the-data-type-of-that-variable)
+      - [C-style Cast](#c-style-cast)
+      - [Pre-standard C++ Cast](#pre-standard-c---cast)
+- [3.4 Overflow and Underflow](#34-overflow-and-underflow)
+- [3.5 Named Constants](#35-named-constants)
+- [3.6 Multiple and Combined Assignment](#36-multiple-and-combined-assignment)
+  * [Combined Assignment Operators](#combined-assignment-operators)
+- [3.7 Formatting Output](#37-formatting-output)
+    + [Stream Manipulators](#stream-manipulators)
+- [3.9 More Mathematical Library Functions](#39-more-mathematical-library-functions)
+- [3.10 Random Numbers](#310-random-numbers)
+      - [Limiting the Range of a Random Number](#limiting-the-range-of-a-random-number)
+- [3.11 Focus on Debugging: _Hand Tracing a Program_](#311-focus-on-debugging---hand-tracing-a-program-)
 
 ------
 
@@ -86,7 +102,7 @@ When sending an expression that includes an operator to `cout`, it is always a g
 
 
 
-C++ does not have an exponent operator. Raising a number to a power requires the use of a _library function_. A **library function** is a routine that performas a specific operation.
+C++ does not have an exponent operator. Raising a number to a power requires the use of a _library function_. A **library function** is a routine that performs a specific operation.
 
 C++ uses the `pow` function for exponents. It accepts 2 arguments: a base and a power. `pow(base, exponent)`
 
@@ -272,7 +288,7 @@ cout << fixed << setprecision(2) << 307.00
 307.00
 ```
 
-`showpoint`: indicates that a decimal point and decimal digits should be printed for a floating-point number, even if the value being displayed has no decimal digits.
+`showpoint`: indicates that a decimal point and decimal digits should be printed for a floating-point number, even if the value being displayed has no decimal digits. 6 significant digits are displayed by default.
 
 ```C++
 double x = 456.0;
@@ -280,6 +296,65 @@ cout << showpoint << x << endl;
 // output
 456.000
 ```
+
+`left`: causes subsequent output to be left-justified.
+
+`right`: causes subsequent output to be right-justified.
+
+
+
+## 3.9 More Mathematical Library Functions
+
+| **Function** | **Example**      | **Description**                                              |
+| ------------ | ---------------- | ------------------------------------------------------------ |
+| `abs`        | `y = abs(x);`    | Returns the absolute value of the argument. The argument and the return value are integers. |
+| `cos`        | `y = cos(x);`    | Returns the cosine of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles. |
+| `exp`        | `y = exp(x);`    | Computes the exponential function of the argument, which is `x`. The return type and the argument are doubles. |
+| `fmod`       | `y = fmod(x,z);` | Returns, as a double, the remainder of the first argument divided by the second argument. Works like the modulus operator, but the arguments are doubles. (The modulus operator only works with integers.) Do not pass zero as the second argument. This would cause division by zero. |
+| `log`        | `y = log(x);`    | Returns the natural logarithm of the argument. The return type and the argument are doubles. |
+| `log10`      | `y = log10(x);`  | Returns the base-10 logarithm of the argument. The return type and the argument are doubles. |
+| `pow`        | `y = pow(x,z);`  | Returns the first argument raised to the power of the second one. |
+| `round`      | `y = round(x);`  | Returns the floating-point argument passed to it rounded to the nearest whole number. The return value is an integer. |
+| `sin`        | `y = sin(x);`    | Returns the sine of the argument. The argument should be an angle expressed in radians. The return type and the argument are doubles. |
+| `sqrt`       | `y = sqrt(x);`   | Returns the square root of the argument. The return type and argument are doubles. The argument must be zero or greater. |
+| `tan`        | `y = tan(x);`    | Returns the tangent of the argument. The argument should be an angle expressed in radians. The return type and argument are doubles. |
+
+
+
+## 3.10 Random Numbers
+
+[`rand()`](http://www.cplusplus.com/reference/cstdlib/rand/): generates random numbers. It returns a non-negative integer each time it is called.
+
+- To use `rand()`, you must include the `cstdlib` header file in your program.
+
+- ```C++
+  randomNum = rand();
+  ```
+
+- The numbers returned are `pseudorandom` in that it will return the same stream of numbers every time the program is run. A **seed** must be provided for the `rand()` algorithm to start with.
+
+[`srand(unsigned int seed)`](http://www.cplusplus.com/reference/cstdlib/srand/): for every different **seed value** used in a call to `srand`, the pseudo-random number generator can be expected to generate a different succession of results in the subsequent calls to `rand()`.
+
+* It’s common to call the `time(0 or NULL)` with `srand()` since it returns the current UNIX timestamp.
+* `time` is part of the `ctime` library so that header file must be added as an `#include`
+
+
+
+##### Limiting the Range of a Random Number
+
+```c++
+number = rand() % maxValue + 1;	// sets a max limit (range: 1 - maxValue)
+
+number = (rand() % (maxValue - minValue + 1)) + minValue	// sets a range
+```
+
+
+
+## 3.11 Focus on Debugging: _Hand Tracing a Program_
+
+**Hand tracing**: a debugging process where you pretend that you are the computer executing the program. You step through the program’s statements one by one, recording the contents that each variable will have after the statement executes.
+
+You’re basically making a table with columns for each variable. Every row will represent a row in the code (statement).
 
 
 
