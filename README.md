@@ -45,7 +45,8 @@ Notes on assigned readings from the following text(s):
    1. `mkdir <weekX>`
    2. `touch <FILE_NAME>.cpp`
    3. `vim <FILE_NAME>.cpp` and begin writing your program.
-      1. `:exit` to save and exit `vim`
+      1. `ctrl + c` to leave edit mode
+      2. `:exit` to save and exit `vim`
 3. Compiile your `cpp` file
    1. `g++ <FILE_NAME>.cpp -o <EXECUTABLE_NAME>`
 4. Run your file
@@ -75,7 +76,7 @@ Notes on assigned readings from the following text(s):
 
 3. On your local machine, create your program and compile it:
    1. `cd /local/directory && touch myprogram.cpp`
-   2. Open your. file in your preferred IDE:
+   2. Open your file in your preferred IDE:
       1. For VSCode, `code myprogram.cpp`
    3. Once finished, compile your program & run it:
       1. `g++ myprogram.cpp -o myprogram`
