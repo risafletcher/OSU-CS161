@@ -10,7 +10,7 @@ Notes on assigned readings from the following text(s):
 
 
 
-*_Assignments may be posted after their due date. I’m still on the fence about this._
+*_Assignments will be posted after their due date. I’m available on [Slack](class-cs161-400-su19.slack.com) for help, if I can help, that is._  
 
 
 
@@ -27,7 +27,10 @@ Notes on assigned readings from the following text(s):
   - Windows: [WinSCP](https://winscp.net/eng/index.php)
   - Mac: [Cyberduck](https://cyberduck.io/)
 - Terminal:
-  - Windows: [Git Bash](https://gitforwindows.org/)
+  - Windows: [Git Bash](https://gitforwindows.org/), [Windows Terminal (Beta)](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701)
+    - Ensure you have the[ Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/install-win10) installed
+    - In your WSL, you’ll also need to install the `g++` compiler:
+      `sudo apt-get install build-essential g++`
   - Mac: [iTerm2](https://www.iterm2.com/)
 - Shell (ZSH): [Oh My ZSH](https://ohmyz.sh/)
   - Theme: [Powerlevel9k](https://github.com/bhilburn/powerlevel9k)
@@ -36,7 +39,11 @@ Notes on assigned readings from the following text(s):
 
 ## Assignment Submission
 
-**In `vim`**:
+There are two ways you can create, compile, and submit your assignment. `vim` or an FTP client, both of which you should have set up.
+
+
+
+### **In `vim`**:
 
 1. SSH into `flip` via your Terminal
    1. `ssh OSU_ID@access.engr.oregonstate.edu`
@@ -47,26 +54,29 @@ Notes on assigned readings from the following text(s):
    3. `vim <FILE_NAME>.cpp` and begin writing your program.
       1. `ctrl + c` to leave edit mode
       2. `:exit` to save and exit `vim`
-3. Compiile your `cpp` file
-   1. `g++ <FILE_NAME>.cpp -o <EXECUTABLE_NAME>`
+3. Compile your `cpp` file
+   
+   * `g++ <FILE_NAME>.cpp -o <EXECUTABLE_NAME>`
 4. Run your file
-   1. `./<EXECUATABLE_NAME>`
+   1. `./<EXECUTABLE_NAME>`
    2. Ensure the program behaves as expected
 5. Download the files from `flip` to your local machine:
    1. `scp OSU_ID@access.engr.oregonstate.edu /local/dir`
-      1. If you have permissions errors, prefix this command with `sudo` and enter your password (for your local machine)
+      * If you have permissions errors, prefix this command with `sudo` and enter your password (for your local machine)
+      
       2. For example, if I wanted to download the files to my Documents directory:
-         1. `scp fletchri@access.engr.oregonstate.edu ~/Documents`
+         * `scp fletchri@access.engr.oregonstate.edu ~/Documents`
    2. Enter your OSU password
 6. You may need to recompile your program. `cd` to the directory you downloaded your files to and recompile.
-   1. For example: `cd ~/Documents && g++ animal.cpp -o animal`
+   
+   * For example: `cd ~/Documents && g++ animal.cpp -o animal`
 7. Upload your program to [Mimir](https://class.mimir.io/)
 
 
 
 
 
-**via FTP**:
+### **via FTP**:
 
 1. In your FTP client, open a connection to `sftp://access.engr.oregonstate.edu`. Ensure you’re using the **SFTP** protocol. Regular FTP will **not** work.
 
@@ -77,7 +87,7 @@ Notes on assigned readings from the following text(s):
 3. On your local machine, create your program and compile it:
    1. `cd /local/directory && touch myprogram.cpp`
    2. Open your file in your preferred IDE:
-      1. For VSCode, `code myprogram.cpp`
+      * For **VSCode**, `code myprogram.cpp`
    3. Once finished, compile your program & run it:
       1. `g++ myprogram.cpp -o myprogram`
       2. `./myprogram`
