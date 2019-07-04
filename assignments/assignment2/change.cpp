@@ -24,13 +24,13 @@ int main()
     change = change % 25;    // update change remaining
     const int dimes = change / 10;    // pull out dimes from remaining change
     change = change % 10;   // update change remaining
-    const int nickles = change / 5;   // pull out nickles
+    const int nickels = change / 5;   // pull out nickels
     const int pennies = change % 5;    // any remaining value will be in pennies
 
     cout << "Your change will be: " << endl;
     cout << "Q: " << quarters << endl;
     cout << "D: " << dimes << endl;
-    cout << "N: " << nickles << endl;
+    cout << "N: " << nickels << endl;
     cout << "P: " << pennies << endl;
 
     return 0;
