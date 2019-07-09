@@ -2,7 +2,28 @@
 
 ## Table of Contents
 
-
+  * [5.1 Introduction to Loops: The `while` Loop](#51-introduction-to-loops--the--while--loop)
+  * [5.2 Using the `while` Loop for Input Validation](#52-using-the--while--loop-for-input-validation)
+  * [5.3 The Increment and Decrement Operators](#53-the-increment-and-decrement-operators)
+      - [Using `++` and `--` in Mathematical Expressions & Relational Expressions](#using------and------in-mathematical-expressions---relational-expressions)
+  * [5.4 Counters](#54-counters)
+- [5.5 Keeping a Running Total](#55-keeping-a-running-total)
+  * [5.6 Sentinels](#56-sentinels)
+  * [5.7 The `do-while` Loop](#57-the--do-while--loop)
+  * [5.8 The `for` Loop](#58-the--for--loop)
+  * [5.9 Deciding Which Loop to Use](#59-deciding-which-loop-to-use)
+      - [The `while` Loop](#the--while--loop)
+      - [The `do-while` Loop](#the--do-while--loop)
+      - [The `for` Loop](#the--for--loop)
+  * [5.10 Nested Loops](#510-nested-loops)
+  * [5.11 Breaking Out of a Loop](#511-breaking-out-of-a-loop)
+  * [5.12 Using Files for Data Storage](#512-using-files-for-data-storage)
+      - [Setting Up a Program for File Input/Output](#setting-up-a-program-for-file-input-output)
+      - [Creating a File Stream Object and Opening a File](#creating-a-file-stream-object-and-opening-a-file)
+      - [Closing a File](#closing-a-file)
+      - [Writing Data to a File](#writing-data-to-a-file)
+      - [Reading Data from a File](#reading-data-from-a-file)
+      - [The Read Position](#the-read-position)
 
 ------
 
