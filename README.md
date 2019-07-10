@@ -54,7 +54,7 @@ There are two ways you can create, compile, and submit your assignment. SSH or a
    3. `vim <FILE_NAME>.cpp` and begin writing your program.
       1. `i` to enter edit mode
       1. `ctrl + c` or `esc` to leave edit mode
-      2. `:exit` or `wq` to save and exit `vim`
+      2. `:exit` or `:wq` to save and exit `vim`
 3. Compile your `cpp` file
    
    * `g++ <FILE_NAME>.cpp -o <EXECUTABLE_NAME>`
