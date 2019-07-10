@@ -26,6 +26,9 @@ int main()
 
     cout << "Enter your guess." << endl;
 
+    // initial input to blow away garbage value initialized by default
+    cin >> guess;
+
     // loop until the guess matches the target
     while (guess != target)
     {

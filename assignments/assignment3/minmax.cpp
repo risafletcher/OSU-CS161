@@ -19,10 +19,13 @@ int main()
         max,
         numberOfInts,   // declare numberOfInts
         currentInput;   // declare currentInput
-    cout << "How many integers would you like to enter?" << endl;   // ask user for # of inputs
+    
+    // ask user for # of inputs
+    cout << "How many integers would you like to enter?" << endl;  
     cin >> numberOfInts;    // store number of integers the user wants to enter
 
-    cout << "Please enter " << numberOfInts << " integers." << endl; // ask the user to input numberOfInts inputs
+    // ask the user to input numberOfInts inputs
+    cout << "Please enter " << numberOfInts << " integers." << endl; 
 
     for (int count = 0; count < numberOfInts; count++)
     {
@@ -32,9 +35,9 @@ int main()
             min = currentInput;
             max = currentInput;
         }    
-        else if (currentInput < min)    // then, if the subsequent input is smaller than the min, reassign min
+        else if (currentInput < min)    // then, if the subsequent input < min, reassign min
             min = currentInput;
-        else if (currentInput > max)    // if subsequent input is greater than the max, reassign the max
+        else if (currentInput > max)    // if subsequent input is > max, reassign the max
             max = currentInput;
     }
 
