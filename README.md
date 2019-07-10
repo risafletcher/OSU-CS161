@@ -77,7 +77,7 @@ There are two ways you can create, compile, and submit your assignment. SSH or a
 
 
 
-### **via FTP**:
+### **FTP**:
 
 1. In your FTP client, open a connection to `sftp://access.engr.oregonstate.edu`. Ensure you’re using the **SFTP** protocol. Regular FTP will **not** work.
 
