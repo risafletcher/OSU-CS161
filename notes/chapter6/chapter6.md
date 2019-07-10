@@ -2,7 +2,23 @@
 
 ## Table of Contents
 
-
+- [6.1 Modular Programming](#61-modular-programming)
+- [6.2 Defining and Calling Functions](#62-defining-and-calling-functions)
+- [6.3 Function Prototypes](#63-function-prototypes)
+- [6.4 Sending Data into a Function](#64-sending-data-into-a-function)
+- [6.5 Passing Data by Value](#65-passing-data-by-value)
+- [6.6 The `return` Statement](#66-the--return--statement)
+- [6.7 Returning a Value from a Function](#67-returning-a-value-from-a-function)
+- [6.8 Returning a Boolean Value](#68-returning-a-boolean-value)
+- [6.9 Using Functions in a Menu-Driven Program](#69-using-functions-in-a-menu-driven-program)
+    + [Clearing the Screen](#clearing-the-screen)
+- [6.10 Local and Global Variables](#610-local-and-global-variables)
+- [6.12 Static Local Variables](#612-static-local-variables)
+- [6.12 Default Arguments](#612-default-arguments)
+- [6.13 Using Reference Variables as Parameters](#613-using-reference-variables-as-parameters)
+- [6.14 Overloading Functions](#614-overloading-functions)
+- [6.15 The `exit()` Function](#615-the--exit----function)
+- [6.16 Stubs and Drivers](#616-stubs-and-drivers)
 
 ------
 
