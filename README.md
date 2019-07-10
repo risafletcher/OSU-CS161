@@ -39,11 +39,11 @@ Notes on assigned readings from the following text(s):
 
 ## Assignment Submission
 
-There are two ways you can create, compile, and submit your assignment. `vim` or an FTP client, both of which you should have set up.
+There are two ways you can create, compile, and submit your assignment. SSH or an FTP client, both of which you should have set up.
 
 
 
-### **In `vim`**:
+### **SSH**:
 
 1. SSH into `flip` via your Terminal
    1. `ssh OSU_ID@access.engr.oregonstate.edu`
@@ -52,8 +52,9 @@ There are two ways you can create, compile, and submit your assignment. `vim` or
    1. `mkdir <weekX>`
    2. `touch <FILE_NAME>.cpp`
    3. `vim <FILE_NAME>.cpp` and begin writing your program.
-      1. `ctrl + c` to leave edit mode
-      2. `:exit` to save and exit `vim`
+      1. `i` to enter edit mode
+      1. `ctrl + c` or `esc` to leave edit mode
+      2. `:exit` or `wq` to save and exit `vim`
 3. Compile your `cpp` file
    
    * `g++ <FILE_NAME>.cpp -o <EXECUTABLE_NAME>`
