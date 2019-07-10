@@ -62,7 +62,7 @@ There are two ways you can create, compile, and submit your assignment. SSH or a
    1. `./<EXECUTABLE_NAME>`
    2. Ensure the program behaves as expected
 5. Download the files from `flip` to your local machine:
-   1. `scp OSU_ID@access.engr.oregonstate.edu /local/dir`
+   1. `scp OSU_ID@access.engr.oregonstate.edu <PATH_TO_YOUR_LOCAL_DIR>`
       * If you have permissions errors, prefix this command with `sudo` and enter your password (for your local machine)
       
       2. For example, if I wanted to download the files to my Documents directory:
