@@ -96,7 +96,7 @@ A **counter** is a variable that is regularly incremented or decremented each ti
 
 
 
-# 5.5 Keeping a Running Total
+## 5.5 Keeping a Running Total
 
 A running total is a sum of numbers that accumulates with each iteration of a loop. The variable used to keep the running total is called the accumulator.
 
