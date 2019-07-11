@@ -39,21 +39,22 @@ Notes on assigned readings from the following text(s):
 
 ## Assignment Submission
 
-There are two ways you can create, compile, and submit your assignment. `vim` or an FTP client, both of which you should have set up.
+There are two ways you can create, compile, and submit your assignment. SSH or an FTP client, both of which you should have set up.
 
 
 
-### **In `vim`**:
+### **SSH**:
 
 1. SSH into `flip` via your Terminal
-   1. `ssh OSU_ID@access.engr.oregonstate.edu`
+   1. `ssh <OSU_ID>@access.engr.oregonstate.edu`
    2. Enter password
 2. Create a directory for your work & create your files
    1. `mkdir <weekX>`
    2. `touch <FILE_NAME>.cpp`
    3. `vim <FILE_NAME>.cpp` and begin writing your program.
-      1. `ctrl + c` to leave edit mode
-      2. `:exit` to save and exit `vim`
+      1. `i` to enter edit mode
+      1. `ctrl + c` or `esc` to leave edit mode
+      2. `:exit` or `:wq` to save and exit `vim`
 3. Compile your `cpp` file
    
    * `g++ <FILE_NAME>.cpp -o <EXECUTABLE_NAME>`
@@ -61,7 +62,7 @@ There are two ways you can create, compile, and submit your assignment. `vim` or
    1. `./<EXECUTABLE_NAME>`
    2. Ensure the program behaves as expected
 5. Download the files from `flip` to your local machine:
-   1. `scp OSU_ID@access.engr.oregonstate.edu /local/dir`
+   1. `scp <OSU_ID>@access.engr.oregonstate.edu <PATH_TO_YOUR_LOCAL_DIR>`
       * If you have permissions errors, prefix this command with `sudo` and enter your password (for your local machine)
       
       2. For example, if I wanted to download the files to my Documents directory:
@@ -76,7 +77,7 @@ There are two ways you can create, compile, and submit your assignment. `vim` or
 
 
 
-### **via FTP**:
+### **FTP**:
 
 1. In your FTP client, open a connection to `sftp://access.engr.oregonstate.edu`. Ensure you’re using the **SFTP** protocol. Regular FTP will **not** work.
 
