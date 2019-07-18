@@ -34,7 +34,7 @@ The `#include` directive causes the preprocessor to include the contents of anot
 
 The word that is enclosed in brackets, `<iostream>`, is the name of the header file that is to be included. (The name of the file is `iostream`. The brackets indicate that it is a standard C++ header file.) 
 
-[**Namespace**](https://www.geeksforgeeks.org/namespace-in-c/): a declarative region that provides a scope to the identifiers (names of the types, function, variables, etc) inside it. 
+[**Namespace**](https://www.geeksforgeeks.org/namespace-in-c/): a declarative region that provides a scope to the identifiers (names of the types, function, variables, etc) inside it. Namespaces allow developers to tell the computer to split their code into smaller, distinct blocks where they can be more confident that names for variables, functions, and objects won't clash.
 
 The statement `using namespace std` declares that the program will be accessing entities whose names are part of the namespace `std`. In order for a program to use the entities in `iostream`, it must have access to the `std `namespace.
 
