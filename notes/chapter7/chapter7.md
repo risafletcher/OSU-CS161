@@ -2,7 +2,22 @@
 
 ## Table of Contents
 
-
+- [7.1 Abstract Data Types](#71-abstract-data-types)
+- [7.2 Object-Oriented Programming](#72-object-oriented-programming)
+- [7.3 Introduction to Classes](#73-introduction-to-classes)
+    + [Access Specifiers](#access-specifiers)
+- [7.4 Creating and Using Objects](#74-creating-and-using-objects)
+- [7.5 Defining Member Functions](#75-defining-member-functions)
+- [7.6 Constructors](#76-constructors)
+- [7.7 Destructors](#77-destructors)
+- [7.8 Private Member Functions](#78-private-member-functions)
+- [7.9 Passing Objects to Functions](#79-passing-objects-to-functions)
+- [7.10 Object Composition](#710-object-composition)
+- [7.11 Separating Class Specification, Implementation, and Client Code](#711-separating-class-specification--implementation--and-client-code)
+- [7.12 Structures](#712-structures)
+- [7.13 More about Enumerated Data Types](#713-more-about-enumerated-data-types)
+- [7.14 Home Software Company OOP Case Study](#714-home-software-company-oop-case-study)
+- [7.15 Introduction to Object-Oriented Analysis and Design](#715-introduction-to-object-oriented-analysis-and-design)
 
 ------
 
@@ -236,6 +251,75 @@ class Contact
 
 
 
-## 7. Destructors
+## 7.7 Destructors
 
-A **destructor** is a member function that is automatically called when an object is destroyed.
+A **destructor** is a public member function that is automatically called when an object is destroyed.
+
+- has the same name as the class, preceded by a tilde `~`
+  - for example, `Rectangle`‘s destructor would be `~Rectangle`
+- like constructors, destructors have no return type
+- cannot accept arguments, so they have no parameter list
+- there can only be one destructor
+- most useful when working with objects that are dynamically allocated
+
+```C++
+class Demo
+{
+    public:
+    	Demo();		// Constructor prototype
+    	~Demo();	// Destructor prototype
+};
+
+Demo::Demo()		// Constructor function definition
+{ }
+
+Demo::~Demo()		// Destructor function definition
+{ }
+```
+
+
+
+## 7.8 Private Member Functions
+
+
+
+
+
+## 7.9 Passing Objects to Functions
+
+
+
+
+
+## 7.10 Object Composition
+
+
+
+
+
+## 7.11 Separating Class Specification, Implementation, and Client Code
+
+
+
+
+
+## 7.12 Structures
+
+
+
+
+
+## 7.13 More about Enumerated Data Types
+
+
+
+
+
+## 7.14 Home Software Company OOP Case Study
+
+
+
+
+
+## 7.15 Introduction to Object-Oriented Analysis and Design
+
