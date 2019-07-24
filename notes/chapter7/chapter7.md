@@ -287,23 +287,31 @@ Private member functions may only be called from a function that is a member of 
 
 ## 7.9 Passing Objects to Functions
 
-Class objects may be passed as arguments to functions.
+When an object is passed into a function, it passed by value, meaning the function receives a _copy_ of the object. Any changes made to that argument do not affect the original object. If the original object needs to be mutated, it should be passed by reference.
 
-```C++
-void displayRectangle(Rectangle r)	// passing by value
-{
-    cout << "Length: " << r.getLength() << endl;
-    cout << "Width: " << r.getWidth() << endl;
-    cout << "Area: " << r.getArea() << endl;
-}
+- Passing an object by value can slow the program’s execution time because it requires the value to be copied.
 
-Rectangle box(15, 10);
-displayRectangle(box);		// pass by value
-```
+- Passing an object by reference is faster because no copy has to be made since the function has access to the original object. This is preferred.
 
-Because passing an object by value requires making a copy of all the object’s members, it can slow down execution time. Passing by reference is faster because no copy has to be made since the function has access to the original object.
+- To avoid mutating the object’s member data, the object can be passed by _**constant reference**_, meaning the reference to the origin object is passed to the function, but it cannot access any of the object’s mutator functions or change any of the object’s data. It can only call accessor functions that have themselves been designated ad _**constant functions**_.
 
-**constant reference** - a way of passing an object to a function by reference while also preventing any mutation to the object data. The receiving function cannot call any mutator functionr or change any of the object member’s data. It can only call accessor functions that have themselves been designated as **constant functions**.
+  ```c++
+class InventoryItem
+  {
+    private:
+    	int partNum;
+    public:
+    	int getPartNum() const		// const accessor function allows 
+      {													// the function to be used when the
+        return partNum;					// object is passed by constant reference
+      }
+    	int showValues(InventoryItem)
+  }
+  
+  int showValues(const InventoryItem&);		// Function Prototype
+  int showValues(const InventoryItem &item)	// Function Header
+  ```
+  
 
 - you must add `const` to parameter list in both the function protype and header.
 
@@ -314,8 +322,6 @@ Because passing an object by value requires making a copy of all the object’s 
       
   }
   ```
-
-
 
 Functions may also return objects:
 
@@ -335,33 +341,6 @@ InventoryItem storeValues()
     return tempItem;
 }
 ```
-
-When an object is passed into a function, it passed by value, meaning the function receives a _copy_ of the object. Any changes made to that argument do not affect the original object. If the original object needs to be mutated, it should be passed by reference.
-
-- Passing an object by value can slow the program’s execution time because it requires the value to be copied.
-
-- Passing an object by reference is faster because no copy has to be made since the function has access to the original object. This is preferred.
-
-  - To avoid mutating the object’s member data, the object can be passed by _**constant reference**_, meaning the reference to the origin object is passed to the function, but it cannot access any of the object’s mutator functions or change any of the object’s data. It can only call accessor functions that have themselves been designated ad _**constant functions**_.
-
-    ```c++
-    class InventoryItem
-    {
-      private:
-      	int partNum;
-      public:
-      	int getPartNum() const		// const accessor function allows 
-        {													// the function to be used when the
-          return partNum;					// object is passed by constant reference
-        }
-      	int showValues(InventoryItem)
-    }
-    
-    int showValues(const InventoryItem&);		// Function Prototype
-    int showValues(const InventoryItem &item)	// Function Header
-    ```
-
-    
 
 
 
