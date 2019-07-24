@@ -14,10 +14,17 @@
 - [7.9 Passing Objects to Functions](#79-passing-objects-to-functions)
 - [7.10 Object Composition](#710-object-composition)
 - [7.11 Separating Class Specification, Implementation, and Client Code](#711-separating-class-specification--implementation--and-client-code)
+    + [**Specification**](#--specification--)
+    + [**Implementation**](#--implementation--)
+    + [Main Program](#main-program)
+    + [Steps to Create an Executable Program](#steps-to-create-an-executable-program)
 - [7.12 Structures](#712-structures)
 - [7.13 More about Enumerated Data Types](#713-more-about-enumerated-data-types)
 - [7.14 Home Software Company OOP Case Study](#714-home-software-company-oop-case-study)
 - [7.15 Introduction to Object-Oriented Analysis and Design](#715-introduction-to-object-oriented-analysis-and-design)
+    + [Object-Oriented Analysis](#object-oriented-analysis)
+    + [Relationships between classes](#relationships-between-classes)
+    + [Finding the Classes](#finding-the-classes)
 
 ------
 
@@ -157,7 +164,7 @@ double ClassName::method2Name()
 
 ## 7.6 Constructors
 
-A **constructor** is a special public member function that is automatically called to _construct_ a class object when it is created. If the programmer does not write a constructor, C++ automatically provides one. You never see it, but it runs silently in the background each time your program defines an object.
+A **constructor** is a special **public **member function that is automatically called to _construct_ a class object when it is created. If the programmer does not write a constructor, C++ automatically provides one. You never see it, but it runs silently in the background each time your program defines an object.
 
 - most of the time, a constructor is used to initialize an object’s member variables
 - it can do anything a normal function can do
@@ -312,7 +319,6 @@ class InventoryItem
   int showValues(const InventoryItem &item)	// Function Header
   ```
   
-
 - you must add `const` to parameter list in both the function protype and header.
 
   ```C++
@@ -490,7 +496,7 @@ int main()
 
 
 
-#### Steps to Create an Executable Program**
+#### Steps to Create an Executable Program
 
 1. The implementation file, `Rectangle.cpp`, should be compiled to create an object file. This file would typically be named `Rectangle.obj`.
 2. The main program file, `mainProgram.cpp`, must be compiled to create an object file. This file would typically be named `mainProgram.obj`.
@@ -505,11 +511,12 @@ int main()
 A **structure** is a programmer-defined data type that can hold many different data values. It was used before OOP became common. It is used to group logically connected data together into a single unit. Once declared, multiple variables of this type can be created.
 
 - Uses the keyword `struct`
+- Creates a new data type
 - Can include member functions but rarely do
 - Does not include the access specifiers `public` or `private`
-- Unlike class members, which are private by default, members of a structure default to being public.
+- Unlike class members, which are private by default, members of a structure **public **by default
 - Names are capitalized like class names
-- Cannot perform comparison opertions on entire structures
+- Cannot perform comparison operations on entire structures
 - Each member must be displayed separately
 
 ```c++
@@ -534,7 +541,69 @@ cout << employee.name				// prints "Jon"
 
 
 
+**initialization list** - a list of values to initialize a set of memory locations. 
+
+```C++
+struct Date
+{
+	int day,
+		month,
+		year;
+}
+
+// initialize a Date variable
+Date birthday = {25, 12, 2000};
+```
+
+- If a structure member is uninitialized, you must leave all the members that follow it uninitialized as well.
+
+- You cannot initialize a structure member in the declaration of a structure because the structure declaration creates a new data type and no variables of this type exist yet.
+- You can use a constructor to initialize a structure and it does **not** need the keyword `public` since all structure members are public by default.
+- Structures can also be nested
+
+
+
 ## 7.13 More about Enumerated Data Types
+
+Enumerated data types can make programs more readable. They are custom data types that have a set of values called **enumerators**, which represent integer constants.
+
+```C++
+enum Car { PORSCHE, FERRARI, JAGUAR };	// declare an enumerated data type
+Car sportsCar;		// define a variable of trhe type Car
+
+enum Car { PORSCHE, FERRARI, JAGUAR } myCar, yourCar;	// declare and define an enumerated data type (two variables of the Car type)
+
+myCar = PORSCHE;	// assign integer constant (enumerator) to myCar variable
+```
+
+If you must assign an integer value to an `enum` variable, you can do so by casting the integer to the `enum` data type.
+
+```C++
+myCar = static_cast<Car>(0);	// will produce the same result as myCar = PORSCHE
+
+int myCar = PORSCHE;		// assign an enumerator to an integer value
+Car otherCar = JAGUAR;		// create otherCar variable and assign enum JAGUAR
+int yourCar = othercar;		// assign enum variable to yourCar
+```
+
+C++ 11 does not allow the same enumerator name to be a member of two different enumerated data types defined or used in the same scope. C++ 11 includes a _strongly typed enum_, also known as an **enum class** to get around this limitation.
+
+- to retrieve a strongly typed enumerator’s underlying integer value, you must use a cast operator
+
+```C++
+enum class Presidents { MCKINLEY, ROOSEVELT, TAFT };
+enum class VicePresidents { ROOSEVELT, FAIRBANKS, SHERMAN };
+
+// when using a strongly typed enum, you must prefix ever enumerator you reference with the enum it belongs to
+Presidents prez = Presidents::Roosevelt;
+VicePresidents vp1 = VicePresidents::Roosevelt;
+VicePresidents vp2 = VicePresidents::SHERMAN;
+
+int x = static_cast<int>(Presidents::ROOSEVELT);	// retrieve underlying enum integer value
+
+// notice we're specifying the integer data type 
+enum class Water : unsigned { FREEZING = 32, BOILING = 212 };
+```
 
 
 
@@ -548,3 +617,29 @@ cout << employee.name				// prints "Jon"
 
 ## 7.15 Introduction to Object-Oriented Analysis and Design
 
+Object-oriented analysis determines the requirements for a system to clarify what it must be able to do, what classes are needed, and how those classes are related. Object-oriented design then designs the classes and specifies how they will carry out their responsibilities.
+
+#### Object-Oriented Analysis
+
+1. **Identify **the classes and objects to be used in the program.
+2. Define the **attributes **for each class.
+3. Define the **behaviors **for each class.
+4. Define the **relationships** between classes.
+
+
+
+#### Relationships between classes
+
+- Access - _Uses-a_
+- Ownership (Composition) - _Has-a_
+- Inheritance - _Is-a_
+
+
+
+#### Finding the Classes
+
+1. Get a written description of the problem domain.
+2. Identify all the nouns (including pronouns and noun phases) in the description. Each of these is a potential class.
+3. Refine the list to include only the classes that are relevant to the problem.
+
+**Problem domain** - the set of real-world objects, parties, and major events related to the problem. 
