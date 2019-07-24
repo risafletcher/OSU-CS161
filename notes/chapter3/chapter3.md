@@ -303,6 +303,94 @@ cout << showpoint << x << endl;
 
 
 
+## 3.8 Working with Characters and Strings
+
+Special functions exist for working with characters and strings. `char` can only hold one character, whereas a variable defined as a string can hold a whole set of characters.
+
+#### Inputting a String
+
+When `cin` reads data it passes over and ignores any leading _whitespace_ characters (spaces, tabs, or line breaks). However, once it comes to the first nonblank character and starts reading, it stops when it gets to the next whitespace character. To solve this problem, you can use the C++ function `getline`, which reads an entire line, including leading and embedded spaces, and stores it in a `string` object.
+
+```c++
+getline(cin, inputLine);
+```
+
+For example:
+
+```c++
+string name;
+string cityState;
+
+cout << "Please enter your name: ";
+getline(cin, name);
+cout << "Enter the city you live in: ";
+getline(cin, cityState);
+cout << name << " lives in " << cityState << end;
+
+// John Doe lives in Spokane, WA
+```
+
+If you have a menu-driven program where the user should be able to simply “press Enter to continue”, `cin >>` will not work, because it does not pick up on whitespace characters. In this situation you can use `cin.get()`.
+
+* is a _member function_ of `cin`
+* reads a single character, including any whitespace character (no arg)
+
+If the character needs to be stored in a variable:
+
+```c++
+cin.get(ch);
+ch = cin.get();
+```
+
+When `cin >>` is used in conjunction with `cin.get`, some errors may arise when using `cin.get` after `cin >>`. When something is input using `cin >>`, the user types in a value and hits the [Enter] key. The [Enter] key causes a `‘\n’` character to be stored in the keyboard buffer right after the inputted value.
+
+![image-20190711150521452](assets/image-20190711150521452.png)
+
+When `cin.get` executes, it begins reading the keyboard buffer from where the previous input operation stopped and it finds the newline character, so it uses that and does not wait for the user to input another value. This can be fixed with `cin.ignore`.
+
+```
+cin.ignore(numberofCharacters, characterToLookFor);		// arguments are optional
+```
+
+* causes `cin` to skip the next `numberOfCharacters` OR until `characterToLookFor` is encountered, whichever comes first
+* if no arguments, `cin` will only skip the very next character
+  * this is helpful in simple prompts that require [Enter] before proceeding
+    `cin.ignore();`
+
+#### Useful `string` Member Functions and Operators
+
+* **`str.assign(num, char)`**: allows you to assign a set of repeated characters to a string without having to count the characters
+* **`str.length()`**: returns an `int` length of the string
+* **+** concatenates (joins) two strings together
+
+#### Using C-Strings
+
+**C-string**: a group of 1-byte memory cells (an array) that hold the characters of a string.
+
+* as with string literals, a null-terminator `\0` is added to the end of a c-string
+
+```
+char name[SIZE];
+char word[10] = "Hello";			// [10] is the size declarator
+```
+
+**size declarator**: tells how many memory cells to set up to hold the characters in the string.
+
+![image-20190711152846545](assets/image-20190711152846545.png)
+
+* Because one space must be reserved for the null terminator, `word` can only hold a string of up to nine characters.
+
+**`strcpy(Cstring, value)`**: pronounced _string copy_, this function is used to copy the contents of one string into another. It is used to assign a value to a Cstring.
+
+**buffer overrun**: when a user types in more characters than a c-string can hold, `cin` will store the characters anyway and the ones that don’t fit will spill over into the following memory cells, overwriting whatever was previously stored in there.
+
+**`setw(int)`**: a stream manipulator that can control the number of characters `cin >>` inputs on its next read.
+
+**`cin.getline(nameOfStringArray, sizeOfArray)`**: allows you to read in a string containing spaces (for C-strings). 
+
+* `cin` will read up to one character less than `sizeOfArray`, leaving room for the null terminator.
+* eliminates the need for using `setw` or the `width` function.
+
 ## 3.9 More Mathematical Library Functions
 
 | **Function** | **Example**      | **Description**                                              |

@@ -281,31 +281,237 @@ Demo::~Demo()		// Destructor function definition
 
 ## 7.8 Private Member Functions
 
-
+Private member functions may only be called from a function that is a member of the same class. You can think of them as helper functions because they help modularize public methods. 
 
 
 
 ## 7.9 Passing Objects to Functions
 
+Class objects may be passed as arguments to functions.
 
+```C++
+void displayRectangle(Rectangle r)
+{
+  cout << "Length: " << r.getLength() << endl;
+  cout << "Width: " << r.getWidth() << endl;
+  cout << "Area: " << r.getArea() << endl;
+}
+```
+
+When an object is passed into a function, it passed by value, meaning the function receives a _copy_ of the object. Any changes made to that argument do not affect the original object. If the original object needs to be mutated, it should be passed by reference.
+
+- Passing an object by value can slow the program’s execution time because it requires the value to be copied.
+
+- Passing an object by reference is faster because no copy has to be made since the function has access to the original object. This is preferred.
+
+  - To avoid mutating the object’s member data, the object can be passed by _**constant reference**_, meaning the reference to the origin object is passed to the function, but it cannot access any of the object’s mutator functions or change any of the object’s data. It can only call accessor functions that have themselves been designated ad _**constant functions**_.
+
+    ```c++
+    class InventoryItem
+    {
+      private:
+      	int partNum;
+      public:
+      	int getPartNum() const		// const accessor function allows 
+        {													// the function to be used when the
+          return partNum;					// object is passed by constant reference
+        }
+      	int showValues(InventoryItem)
+    }
+    
+    int showValues(const InventoryItem&);		// Function Prototype
+    int showValues(const InventoryItem &item)	// Function Header
+    ```
+
+    
 
 
 
 ## 7.10 Object Composition
 
-
+**Object composition**: when one class is nested inside another class. The class specification may include an instance of another class and use its methods.
 
 
 
 ## 7.11 Separating Class Specification, Implementation, and Client Code
 
+Usually, class declarations are stored in their own header files (`.hpp`) and member functions are stored in their own `.cpp` files.
 
+- **Class declarations** are stored in their own **header files**. A header file that contains a class declaration is called a **_class specification file_**. The name of the class specification file is usuallt the same name of the class, with a `.h` extension. For example, the `Rectangle` class would be declared in the file `Rectangle.h`.
+- Any program that uses the class should `#include` this header file.
+- The member function definitions for a class are stored in a separate `.cpp` file, which is called the _**class implementation file**_. The file usually has the same name as the class, with the `.cpp` extension. For example, the `Rectangle` class member functions would be defined in the file `Rectangle.cpp`.
+- The class `.cpp` file should be compiled and linked with the application program that uses the class. This program, also known as the _**client program**_, or _**client code**_, is the one that includes the `main` function. This process can be automated with a `project` or `make` utility. IDEs such as Visual Studio also provide the means to create multi-file projects.
+
+
+
+#### **Specification**
+
+**`Rectangle.h`**
+
+```C++
+// Rectangle.h is the Rectangle class specification file
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+
+// Rectangle class declaration
+class Rectangle
+{
+  private:
+  	double length;
+  	double width;
+  public:
+  	bool setLength(double);
+  	bool setWidth(double);
+  	double getLength();
+  	double getWidth();
+  	double calcArea();
+};
+#endif
+```
+
+**`ifndef`**: an _include guard_ that prevents the header file from accidentally being included more than once. It stands for “if not defined.” It is used to determine whether or not a specific constant has already been defined with another `#define` directive. The `#ifndef` directive checks for the existence of a constant named `RECTANGLE_H` and if it has not been defined yet, it will be defined in the next line. If it has, everything between the `#ifndef` and **`#endif`** directives is skipped.
+
+- The constant used with this directive should be written in all capital letters and customarily named `FILENAME_H`, where `FILENAME` is the name of the header file.
+
+When the main program has an `#include` directive for a header file, there is always the possibility that the header file will have an `#include` directive for a second header file. If your main program file also has an `#include` directive for the second header file, the preprocessor will include the second header file twice. An error will occur because the compiler will process the declarations in the second header file twice.
+
+
+
+#### **Implementation**
+
+**`Rectangle.cpp`**
+
+```c++
+// Rectangle.cpp is the Rectangle class function implementation file.
+#include "Rectangle.h"									// specifies the header file is located 
+																				// in the current project directory
+
+bool Rectangle::setLength(double len)		// returns a bool that tells us whether
+{																				// or not valid data was passed in
+  bool validData = true;
+  if (len >= 0)
+    length = len;
+  else
+    validData = false;
+  return validData;
+}
+
+bool Rectangle::setWidth(double w)
+{
+  bool validData = true;
+  if (w >= 0)
+    	width = w;
+  else
+    validData = false;
+  return validData;
+}
+
+double Rectangle::getLength()
+{
+  return length;
+}
+
+double Rectangle::getWidth()
+{
+  return width;
+}
+
+double Rectangle::calcArea()
+{
+  return length * width;
+}
+```
+
+**compiler include file directory**: the directory or folder where all standard C++ header files are located. Header files wrapped in angled brackets `< >` are part of the compiler’s include file directory.
+
+
+
+#### Main Program
+
+**`mainProgram.cpp`**
+
+```c++
+// This program uses the Rectangle class
+// The Rectangle class declaration is in file Rectangle.h
+// The rectangle member function definitions are in Rectangle.cpp
+// These files should all be combined into a project
+#include <iostream>
+#include "Rectangle.h"			// contains Rectangle class declaration
+
+using namespace std;
+
+int main()
+{
+  Rectangle box;						// declare a Rectangle object
+  double boxLength, boxWidth;
+  
+  cout << "This program will calculate the area of a rectangle. \n";
+  cout << "What is the length? ";
+  cin >> boxLength;
+  cout << "What is the width? ";
+  cin >> boxWidth;
+  
+  // Call member functions to set box dimensions.
+  // If the function call returns false, it means the argument
+  // sent to it was invalid and not stored.
+  if (!box.setLength(boxLength))
+    cout << "Invalid box length entered. \n";
+  else if (!box.setWidth(boxWidth))
+    cout << "Invalid box width entered. \n";
+  else
+  {
+    cout << "\nHere is the rectangle's data:\n";
+    cout << "Length: " << box.getLength() << endl;
+    cout << "Width: " << box.getWidth() << endl;
+    cout << "Area: " << box.calcArea() << endl;
+  }
+  return 0;
+}
+```
+
+
+
+#### Steps to Create an Executable Program**
+
+1. The implementation file, `Rectangle.cpp`, should be compiled to create an object file. This file would typically be named `Rectangle.obj`.
+2. The main program file, `mainProgram.cpp`, must be compiled to create an object file. This file would typically be named `mainProgram.obj`.
+3. The object files `mainProgram.obj` and `Rectangle.obj` are linked together to create an executable file, which would be named something like `mainProgram.exe`.
+
+![image-20190719163907139](assets/image-20190719163907139.png)
 
 
 
 ## 7.12 Structures
 
+A **structure** is a programmer-defined data type that can hold many different data values. It was used before OOP became common. It is used to group logically connected data together into a single unit. Once declared, multiple variables of this type can be created.
 
+- Uses the keyword `struct`
+- Can include member functions but rarely do
+- Does not include the access specifiers `public` or `private`
+- Unlike class members, which are private by default, members of a structure default to being public.
+- Names are capitalized like class names
+- Cannot perform comparison opertions on entire structures
+- Each member must be displayed separately
+
+```c++
+struct Payroll
+{
+  int			empNumber;
+  string	name;
+  double	hours,
+  				payRate,
+  				grossPay;
+};
+
+Payroll employee;
+employee.empNumber = 475;
+employee.name = "Jon";
+employee.hours = "40.0";
+employee.payRate = "15.50";
+employee.grossPay = "542.32"
+  
+cout << employee.name				// prints "Jon"
+```
 
 
 
