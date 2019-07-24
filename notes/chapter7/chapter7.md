@@ -281,25 +281,74 @@ Demo::~Demo()		// Destructor function definition
 
 ## 7.8 Private Member Functions
 
-
+Private member functions may only be called from a function that is a member of the same class.
 
 
 
 ## 7.9 Passing Objects to Functions
 
+Class objects may be passed as arguments to functions.
 
+```C++
+void displayRectangle(Rectangle r)	// passing by value
+{
+    cout << "Length: " << r.getLength() << endl;
+    cout << "Width: " << r.getWidth() << endl;
+    cout << "Area: " << r.getArea() << endl;
+}
+
+Rectangle box(15, 10);
+displayRectangle(box);		// pass by value
+```
+
+Because passing an object by value requires making a copy of all the object’s members, it can slow down execution time. Passing by reference is faster because no copy has to be made since the function has access to the original object.
+
+**constant reference** - a way of passing an object to a function by reference while also preventing any mutation to the object data. The receiving function cannot call any mutator functionr or change any of the object member’s data. It can only call accessor functions that have themselves been designated as **constant functions**.
+
+- you must add `const` to parameter list in both the function protype and header.
+
+  ```C++
+  void showValues(const InventoryItem&);
+  void showValues(const InventoryItem &item)
+  {
+      
+  }
+  ```
+
+
+
+Functions may also return objects:
+
+```C++
+InventoryItem storeValues()
+{
+    InventoryItem tempItem;	// Create local InventoryItem object
+    int partNum;			// Local variables to hold user input
+    string description;
+    int qty;
+    double price;
+    
+    // Code to get the data from the user goes here.
+    
+    // Store the data in the InventoryItem object and return it.
+    tempItem.storeInfo(partNum, description, qty, price);
+    return tempItem;
+}
+```
 
 
 
 ## 7.10 Object Composition
 
+It is possible for a class to have a member variable that is an instance of another class.
 
+**object composition** - when one classis nested in another class.
 
 
 
 ## 7.11 Separating Class Specification, Implementation, and Client Code
 
-
+Usually class declarations are store in their own header files and member function definitions are store in their own `.cpp` files.
 
 
 
