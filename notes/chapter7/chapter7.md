@@ -362,7 +362,7 @@ It is possible for a class to have a member variable that is an instance of anot
 
 Usually, class declarations are stored in their own header files (`.hpp`) and member functions are stored in their own `.cpp` files.
 
-- **Class declarations** are stored in their own **header files**. A header file that contains a class declaration is called a **_class specification file_**. The name of the class specification file is usuallt the same name of the class, with a `.h` extension. For example, the `Rectangle` class would be declared in the file `Rectangle.h`.
+- **Class declarations** are stored in their own **header files**. A header file that contains a class declaration is called a **_class specification file_**. The name of the class specification file is usually the same name of the class, with a `.h` extension. For example, the `Rectangle` class would be declared in the file `Rectangle.h`.
 - Any program that uses the class should `#include` this header file.
 - The member function definitions for a class are stored in a separate `.cpp` file, which is called the _**class implementation file**_. The file usually has the same name as the class, with the `.cpp` extension. For example, the `Rectangle` class member functions would be defined in the file `Rectangle.cpp`.
 - The class `.cpp` file should be compiled and linked with the application program that uses the class. This program, also known as the _**client program**_, or _**client code**_, is the one that includes the `main` function. This process can be automated with a `project` or `make` utility. IDEs such as Visual Studio also provide the means to create multi-file projects.
