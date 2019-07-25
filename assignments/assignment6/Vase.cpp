@@ -29,7 +29,10 @@ Vase::Vase(HalfOpenCylinder cylinder, double cost)
 *********************************************************************/
 double Vase::totalCost()
 {
+    // get the surface area of the cylinder by calling the class'
+    // member function
     double surfaceArea = hoc.surfaceArea();
+    // multiply by the cost per square inch
     return costPerSquareInch * surfaceArea;
 }
 
@@ -39,5 +42,7 @@ is more valuable than the Vase passed in as a parameter
 *********************************************************************/
 bool Vase::costsMoreThan(Vase vase2)
 {
+    // get the current Vase's total cost and get the incoming Vase's
+    // total cost. Then perform a comparison and return the result
     return totalCost() > vase2.totalCost();
 }

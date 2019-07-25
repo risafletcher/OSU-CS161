@@ -15,8 +15,8 @@
 HalfOpenCylinder::HalfOpenCylinder()
 {
     // initialize data members to provided default values
-    height = 10;
-    radius = 2;
+    height = 10.0;
+    radius = 2.0;
 }
 
 /*********************************************************************
@@ -34,9 +34,10 @@ HalfOpenCylinder::HalfOpenCylinder(double h, double r)
 *********************************************************************/
 double HalfOpenCylinder::surfaceArea()
 {
-    // A = 2*pi*r*h + 2 * pi*r^2
+    // Surface area of a cylinder = 2*pi*r*h + 2 * pi*r^2
     double pi = 3.14159;
     double side = 2 * pi * radius * height;
+    // since this is open-ended, we only need one end
     double end = pi * std::pow(radius, 2);
     return side + end;
 }
