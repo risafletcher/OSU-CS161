@@ -78,3 +78,133 @@ int main ()
 
 
 
+**8.8 Given the following array definition:**
+
+```c++
+int age[] = {7, 10, 14, 17, 19};
+```
+
+**What do each of the following code segments display?**
+
+1. ```c++
+   for (int val : age)
+       cout << val << " ";
+   // OUTPUT: 7 10 14 17 19
+   ```
+
+2. ```c++
+   for (int val : age)
+       val++
+   // NO OUTPUT
+   ```
+
+3. ```c++
+   for (int &val : age)
+       val++
+   for (int val : age)
+       cout << val << " ";
+   // OUTPUT: 8 11 15 18 20
+   ```
+
+
+
+**8.9 Will the following statement work? If not, why?**
+
+```c++
+double array1[4] = {1.2, 3.2, 4.2, 5.2};
+double array2[4];
+array2 = array1;
+
+// NO, to copy an array you must loop through the first and assign those values to the second array
+```
+
+
+
+**8.10 What will the following code segment display?**
+
+```c++
+int set1[] = {2, 4, 6};
+int set2[] = {2, 4, 6};
+if (set1 == set2)
+   cout << "same";
+else
+   cout << "different";
+
+// OUTPUT: different
+```
+
+
+
+**8.11 Given the following array definition, what do each of the following display?**
+
+```c++
+int values[] = {2, 6, 10, 14};
+```
+
+1. ```c++
+   cout << values[2]	// 10
+   ```
+
+2. ```c++
+   cout << ++values[0];	// 3
+   cout << " " values[0];	// 2
+   ```
+
+3. ```c++
+   cout << values[1]++;	// 6
+   cout << " " values[1];	// 6
+   ```
+
+4. ```c++
+   x = 2;
+   cout << values[++x];	// 14
+   ```
+
+
+
+**8.12 What will the following statement display?**
+
+```c++
+int nums[5] = {1, 2, 3};
+cout << nums[3];	// 0
+```
+
+
+
+**8.13 Which of the following statements correctly initialize the max variable when it is defined?**
+
+```c++
+int max = 10;	// This
+
+int max;
+max = 10;
+
+int max(10);	// This
+int max{10};
+```
+
+
+
+**8.14 What is the output of the following code?**
+
+```c++
+const int SIZE = 5;
+int count;
+int time[SIZE] =  {1, 2, 3, 4, 5},
+    speed[SIZE] = {18, 4, 27, 52, 100},
+    dist[SIZE];
+for (count = 0; count < SIZE; count++)
+   dist[count] = time[count] * speed[count];
+for (count = 0; count < SIZE; count++)
+{  cout << setw(3) << time[count] << setw(5) << speed[count]
+        << setw(5) << dist[count] << endl;
+}
+
+// OUTPUT:
+// 1  18   18
+// 2  4    8
+// 3  27   81
+// 4  52   208
+// 5  100  500
+```
+

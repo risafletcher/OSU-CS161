@@ -112,8 +112,9 @@ for(dataType rangeVariable : array)
 ```
 
 - **`rangeVariable`** is a variable that will receive the value of a different array element during each loop iteration. During the first loop iteration, it receives the value of the first element; during the second iteration, it receives the value of the second element, and so on.
-  - `rangeVariable = array[index]` 
-
+  
+- `rangeVariable = array[index]` 
+  
 - You cannot modify the contents of an array in a range-based `for` loop  unless you declare the range variable as a _reference_.
 
   - To declare a range variable as a reference variable, place an `&` in front of its name in the loop header.
@@ -146,4 +147,183 @@ Strings are technically arrays and its characters can be accessed similarly to a
 
 
 ## 8.7 Using Parallel Arrays
+
+When data items stored in two or more arrays are related and stored in the same order, the arrays are called **parallel arrays**.
+
+
+
+## 8.8 The `typedef` Statement
+
+The `typedef` statement allows an alias to bee created for an existing data type.
+
+```c++
+typedef <existing data type> <alias>;
+
+// Example:
+typedef int examScore;
+examScore score1, score2;		// score1 and score2 are of type examScore (an int)
+```
+
+- This makes `score1` and `score2` integer variables and clarifies that they will be used to hold exam scores.
+
+- `typedef` is most often used to provide a descriptive alias for an array of a specific purpose.
+
+  ```c++
+  typedef double score[100];	// creates an alias named score for a double array of size 100
+   
+  score finalExam;	// equivalent to double finalExam[100]
+  ```
+
+
+
+## 8.9 Arrays as Function Arguments
+
+Individual elements of arrays and entire arrays can both be passed as arguments to functions.
+
+- No one variable can hold an entire array full of data. Thus the name of an array without a subscript does no hold any data at all. Instead it holds the starting address of where the array is located in memory.
+
+- When we pass an array to a function, we pass the name of the array. This means we’re actually sending it the _address_ of the array so _it_ can access the elements.
+
+- Array parameters work like reference variables–they give the function direct access to the original array. Any changes made to the array parameter are actually made to the original array used as the argument.
+
+  - You do not need to use `&` when passing an array to a function.
+
+  - When you don’t want the function to modify the contents of the array, use the `const` keyword.
+
+    ```C++
+    void showValues(const int[], int);
+    ```
+
+    
+
+```c++
+dataType functionName(dataType array[], int size);	// function header
+functionName(myArray[], ARRAY_SIZE);				// calling the function
+```
+
+
+
+## 8.10 Two-Dimensional Arrays
+
+A two-dimensional array is like several identical arrays put together. It is useful for storing multiple sets of data. Think of them like tables, having rows and columns of elements.
+
+To define a two-dimensional array, two size declarators are required. The first one is for the number of rows and  the second one is for the number of columns.
+
+![1564462761594](assets/1564462761594.png)
+
+Elements in a two-dimensional array can be accessed using nested loops.
+
+```c++
+void showArray(int const array[][NUM_COLS], int numRows)
+{
+	for (int row = 0; row < numRows; row++)
+    {
+        for(int col = 0; col < NUM_COLS; col++)
+        {
+            cout << array[row][col] << " ";
+        }
+        cout << endl;	// line break after each row
+    }
+}
+```
+
+
+
+When initializing a two-dimensional array, it helps to enclose each row’s initialization list in a set of braces.
+
+```c++
+int hours[3][2] = {{8, 5}, {7, 9}, {6, 3}};
+// OR
+int hours[3][2] = {8, 5, 7, 9, 6, 3};
+// OR
+int hours[3][2] = {{8, 5},
+                   {7, 9},
+                   {6, 3}};
+```
+
+![1564463182552](assets/1564463182552.png)
+
+- The extra braces above also give you the ability to leave out initializers within a row without omitting the initializers for the rows that follow it.
+
+  ```c++
+  int table[3][2] = {{1}, {3, 4}, {5}};	// the uninitialized elements default to 0
+  ```
+
+  
+
+#### Passing Two-Dimensional Arrays to Functions
+
+When a two-dimensional array is passed to a function, the parameter type must contain a size declarator for the number of columns.
+
+```c++
+void showArray(const int[][NUM_COLS], int);		// Function Prototype
+```
+
+
+
+C++ requires the columns to be specified in the function prototype and header because of the way two-dimensional arrays are stored in memory. One row actually follows another.
+
+![1564463703984](assets/1564463703984.png)
+
+The compiler needs to know how many bytes to separate the rows in memory. The number of columns is a critical factor in this calculation.
+
+The required column information can also be provided with a `typedef` statement:
+
+```c++
+typedef int intTable[][4];
+void showArray(intTable, int);					// Function prototype
+void showArray(intTable arrayName, int numRows)	// Function header
+```
+
+
+
+## 8.11 Arrays with Three or More Dimensions
+
+When writing functions that accept multidimensional arrays as arguments, you must explicitly state all but the first dimension in the parameter list.
+
+```c++
+void displaySeats(double [][5][8], int);		// Function prototype
+```
+
+
+
+## 8.12 Introduction to the STL `vector`
+
+The **Standard Template Library** is a collection of _programmer-defined_ data types that are available to use in your C++ programs. These data types and algorithms are not part of the C++ language but were created in addition to the built-in data types. 
+
+- `vector` is part of the `std` namespace.
+- **containers** - data types defined in the STL, they store and organize data.
+  - **sequence container** - organizes data in a sequential fashion.
+  - **associative container** - organize data with keys, which allow rapid, random access to elements stored in the container.
+- The `vector` data type is a sequence container that is like a one-dimensional array in the following ways:
+  - A vector holds a sequence of values, or elements.
+  - A vector stores its elements in contiguous memory locations.
+  - You can use the array subscript operator `[]` to access individual elements in the vector.
+- A vector has advantages over arrays:
+  - You do not have to declare the number of elements that the vector will have.
+  - If you add a value to a vector that is already full, the vector will automatically increase its size to accomodate the new value.
+  - Vectors can report the number of elements they contain.
+
+To use a vector:
+
+```c++
+#include <vector>
+
+vector<int> numbers;		// if you want to declare a size, use numbers(SIZE) instead
+```
+
+- If you specify a size for a vector, the size declarator is in parentheses, not square brackets.
+- There’s no need to declare a size but if you do, the vector can expand as you add values to it.
+
+
+
+#### Example Vector Definitions
+
+| **Definition Format**              | **Description**                                              |
+| ---------------------------------- | ------------------------------------------------------------ |
+| `vector<string> names;`            | This defines `names` as an empty vector of `string` objects. |
+| `vector<int> scores(15);`          | This defines `scores` as a vector of 15 `ints`.              |
+| `vector<char> letters(25, 'A');`   | This defines `letters` as a vector of 25 characters. Each element is initialized with ‘A’. |
+| `vector<double> values2(values1);` | This defines `values2` as a vector of `doubles`. All the elements of `values1`, which is also a vector of `doubles`, are copied to `values2`. |
+| `vector<int> length(12, 10, 6);`   | In C++ 11, this defines `length` as a vector of 3 `ints`, holding the values 12, 10, and 6. |
 
