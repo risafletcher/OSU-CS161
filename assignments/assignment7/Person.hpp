@@ -4,8 +4,8 @@
 ** Description:  A class specification for a Person object that contains a 
 **               string name, a double age, and getter methods for both.
 *******************************************************************************/
-#ifndef PERSON
-#define PERSON
+#ifndef PERSON_HPP
+#define PERSON_HPP
 
 #include <string>
 

@@ -7,11 +7,11 @@
 *******************************************************************************/
 #include "Person.hpp"
 #include <cmath>
-#include <iostream>
+// #include <iostream>
 
 using std::pow;
-using std::cout;
-using std::endl;
+// using std::cout;
+// using std::endl;
 
 double stdDev(Person people[], int size)
 {
@@ -46,18 +46,18 @@ double stdDev(Person people[], int size)
     return sqrt(variance);
 };
 
-int main()
-{
-    const int NUMBER_OF_PEOPLE = 5;
-    Person people[NUMBER_OF_PEOPLE] = {
-        Person("Bob", 12.5),
-        Person("Barbara", 7.0),
-        Person("Susan", 10.0),
-        Person("Shirley", 7.8),
-        Person("Laura", 15.5)
-    };
+// int main()
+// {
+//     const int NUMBER_OF_PEOPLE = 5;
+//     Person people[NUMBER_OF_PEOPLE] = {
+//         Person("Bob", 12.5),
+//         Person("Barbara", 7.0),
+//         Person("Susan", 10.0),
+//         Person("Shirley", 7.8),
+//         Person("Laura", 15.5)
+//     };
 
-    cout << "The standard deviation of these data values is " << stdDev(people, NUMBER_OF_PEOPLE) << endl;
+//     cout << "The standard deviation of these data values is " << stdDev(people, NUMBER_OF_PEOPLE) << endl;
 
-    return 0;
-}
+//     return 0;
+// }

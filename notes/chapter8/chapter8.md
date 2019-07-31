@@ -1,8 +1,29 @@
 # Chapter 8: Arrays and Vectors
 
+## Table of Contents
 
+- [8.1 Arrays Hold Multiple Values](#81-arrays-hold-multiple-values)
+- [8.2 Accessing Array Elements](#82-accessing-array-elements)
+- [8.3 Inputting and Displaying Arrays](#83-inputting-and-displaying-arrays)
+    + [Reading Data from a File into an Array](#reading-data-from-a-file-into-an-array)
+    + [Writing the Contents of an Array to a File](#writing-the-contents-of-an-array-to-a-file)
+- [8.4 Array Initialization](#84-array-initialization)
+    + [New Ways to Initialize Variables](#new-ways-to-initialize-variables)
+- [8.5 The Range-Based `for` Loop](#85-the-range-based--for--loop)
+- [8.6 Processing Array Contents](#86-processing-array-contents)
+    + [Copying One Array to Another](#copying-one-array-to-another)
+    + [Strings](#strings)
+- [8.7 Using Parallel Arrays](#87-using-parallel-arrays)
+- [8.8 The `typedef` Statement](#88-the--typedef--statement)
+- [8.9 Arrays as Function Arguments](#89-arrays-as-function-arguments)
+- [8.10 Two-Dimensional Arrays](#810-two-dimensional-arrays)
+    + [Passing Two-Dimensional Arrays to Functions](#passing-two-dimensional-arrays-to-functions)
+- [8.11 Arrays with Three or More Dimensions](#811-arrays-with-three-or-more-dimensions)
+- [8.12 Introduction to the STL `vector`](#812-introduction-to-the-stl--vector-)
+    + [Example Vector Definitions](#example-vector-definitions)
+- [8.13 Arrays of Objects](#813-arrays-of-objects)
 
-
+------
 
 ## 8.1 Arrays Hold Multiple Values
 
@@ -327,3 +348,48 @@ vector<int> numbers;		// if you want to declare a size, use numbers(SIZE) instea
 | `vector<double> values2(values1);` | This defines `values2` as a vector of `doubles`. All the elements of `values1`, which is also a vector of `doubles`, are copied to `values2`. |
 | `vector<int> length(12, 10, 6);`   | In C++ 11, this defines `length` as a vector of 3 `ints`, holding the values 12, 10, and 6. |
 
+**`push_back(value)`** - a method that accepts a value as an argument and stores it in a new element placed at the end of the vector.
+
+**`pop_back()`** - a method that removes the last element from a vector.
+
+**`size()`** - a method that returns the lenth of a vector.
+
+**`clear()`** - a method that clears a vector of all its elements.
+
+**`empty()`** - a method that checks if the vector is empty. Returns a bool.
+
+**`at(position)`** - a method that takes a position and returns the element located at that position.
+
+**`resize(n, value[optional])`** - a method that resizes a vector to have `n` elements, where `n` is greater than the vector’s current size. If the optional `value` argument is included, each of the new elements will be initialized with that value.
+
+**`swap(vector2)`** - swaps the. contents of the vector with the contents of `vector2`.
+
+
+
+## 8.13 Arrays of Objects
+
+You define an array of objects the same way you define any array.
+
+```c++
+Circle circle[4];				// an array of 4 Circle objects
+circle[0].findArea()		// calling a class method on the first element in the array of Circle objects
+  
+// array definition list creates four Circle objects and initializes them with the values provided. It calls a custom constructor that takes 1 argument.
+// if a fourth value isn't provided, the default constructor is called for that object
+Circle circle[NUM_CIRCLES] = {0.0, 2.0, 2.5, 10.0};
+
+// To use a constructor with more than one argument, you must initialize in the form of a fucntion call
+Circle circle[3] = { Circle(4.0, 2, 1),
+                     Circle(2.0, 1, 3),
+                     Circle(2.5, 5, -1) };
+
+// You may also mix and match calling different constructors
+```
+
+1. The elements of an array can be objects as long as they are objects of the same class.
+2. If you do not use an initialization list when an array of objects is created, the default constructor will be invoked for each object in the array.
+3. It is not necessary that all objects in the array use the same constructor.
+4. If you do use an initialization list when an array of objects is created, the correct constructor will be called for each object, depending on the number and type of arguments used.
+5. If a constructor requires more than one argument, the initializer must take the form of a constructor function call.
+6. If there are fewer initializer calls in the list than there are objects in the array, the default constructor will be called for all the remaining objects.
+7. It is best to always provide a default constructor; but if there is none you must be sure to furnish an initializer for every object in the array.
