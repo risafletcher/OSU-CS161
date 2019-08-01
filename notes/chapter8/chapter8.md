@@ -322,7 +322,7 @@ The **Standard Template Library** is a collection of _programmer-defined_ data t
   - You can use the array subscript operator `[]` to access individual elements in the vector.
 - A vector has advantages over arrays:
   - You do not have to declare the number of elements that the vector will have.
-  - If you add a value to a vector that is already full, the vector will automatically increase its size to accomodate the new value.
+  - If you add a value to a vector that is already full, the vector will automatically increase its size to accommodate the new value.
   - Vectors can report the number of elements they contain.
 
 To use a vector:
@@ -352,13 +352,13 @@ vector<int> numbers;		// if you want to declare a size, use numbers(SIZE) instea
 
 **`pop_back()`** - a method that removes the last element from a vector.
 
-**`size()`** - a method that returns the lenth of a vector.
+**`size()`** - a method that returns the length of a vector.
 
 **`clear()`** - a method that clears a vector of all its elements.
 
 **`empty()`** - a method that checks if the vector is empty. Returns a bool.
 
-**`at(position)`** - a method that takes a position and returns the element located at that position.
+**`at(position)`** - a method that takes a position and returns the element located at that position. This is the preferred way to access elements in vectors since this method will generate an error if you try to access outside the bounds of the vector, whereas if you use array notation the behavior in that case is undefined.
 
 **`resize(n, value[optional])`** - a method that resizes a vector to have `n` elements, where `n` is greater than the vector’s current size. If the optional `value` argument is included, each of the new elements will be initialized with that value.
 
