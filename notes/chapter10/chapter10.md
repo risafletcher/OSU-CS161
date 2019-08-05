@@ -10,6 +10,8 @@
 
 `&` - The address operator
 
+- Be careful not to confuse the use of '&' for passing by reference with its use as the "address of" operator.  They are two separate things.  When you see it on the right hand of an assignment, or as an argument in a function call, it means "address of".  When you see it in the parameter list of a function, it means that you're passing by reference.
+
 **pointer** - the address of a memory location.
 
 Each byte of memory has a unique address. A variable’s address is the address of the first byte allocated to that variable.
@@ -302,7 +304,20 @@ prect = &rect;				// assign address of rect to pRect
 
 - The `new` operator is used to allocate class objects in the same way that it is used to allocate variables of other types. 
 
+- ![10_04.png](assets/10_04.png)
+
 
 
 ## 10.12 Selecting Members of Objects
+
+**Dereferencing Pointers to Structures**
+
+| **Expression** | **Description**                                              |
+| -------------- | ------------------------------------------------------------ |
+| `s->m`         | `s` is a pointer to a structure variable or class object, and `m` is a member. This expression accesses the `m` member of the structure or class object pointed to by `s`. |
+| `*a.p`         | `a` is a structure variable or class object and `p`, a pointer, is a member of `a`. This expression accesses the value pointed to by `a.p`. |
+| `(*s).m`       | `s` is a pointer to a structure variable or class object, and `m` is a member. The * operator dereferences `s`, causing the expression to access the `m` member of the object *`s`. This expression is the same as `s`–>`m`. |
+| `*s–>p`        | `s` is a pointer to a structure variable or class object and `p`, a pointer, is a member of the object pointed to by `s`. This expression accesses the value pointed to by `s–`>`p`. |
+| `*(*s).p`      | `s` is a pointer to a structure variable or class object and `p`, a pointer, is a member of the object pointed to by `s`. This expression accesses the value pointed to by (*`s`).`p`. This expression is the same as *`s`–>`p`. |
+
 
