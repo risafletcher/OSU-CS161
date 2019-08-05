@@ -1,8 +1,20 @@
 # Chapter 10: Pointers
 
+## Table of Contents
 
-
-
+- [10.1 Pointers and the Address Operator](#101-pointers-and-the-address-operator)
+- [10.2 Pointer Variables](#102-pointer-variables)
+- [10.3 The Relationship Between Arrays and Pointers](#103-the-relationship-between-arrays-and-pointers)
+- [10.4 Pointer Arithmetic](#104-pointer-arithmetic)
+- [10.5 Initializing Pointers](#105-initializing-pointers)
+- [10.6 Comparing Pointers](#106-comparing-pointers)
+- [10.7 Pointers as Function Parameters](#107-pointers-as-function-parameters)
+- [10.8 Pointers to Constants and Constant Pointers](#108-pointers-to-constants-and-constant-pointers)
+- [10.9 Dynamic Memory Allocation](#109-dynamic-memory-allocation)
+    + [Dangling Pointers and Memory Leaks](#dangling-pointers-and-memory-leaks)
+- [10.10 Returning Pointers from Functions](#1010-returning-pointers-from-functions)
+- [10.11 Pointers to Class Objects and Structures](#1011-pointers-to-class-objects-and-structures)
+- [10.12 Selecting Members of Objects](#1012-selecting-members-of-objects)
 
 ------
 
