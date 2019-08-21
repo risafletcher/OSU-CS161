@@ -13,10 +13,10 @@ enum GameState { X_WON, O_WON, UNFINISHED };
 class FBoard
 {
     private:
-        int xPosition[2];
+        int xPosition[2],
+            boardSize;
         char
             board[8][8],
-            boardSize,
             xChar,
             oChar,
             blankChar;
@@ -25,14 +25,14 @@ class FBoard
         bool isSpaceOccupied(int, int);
         bool isDestAdjacent(int, int, int, int);
         bool isMoveValid(int, int, int, int);
-        bool moveMarker(int, int, int, int, char);
+        void moveMarker(int, int, int, int, char);
 
     public:
         FBoard();
         GameState getGameState();
+        void printBoard();
         bool moveX(int, int);
         bool moveO(int, int, int, int);
-        
 };
 
 #endif
